@@ -1,0 +1,6 @@
+Hasta ahora, has implementado:
+✅ Autenticación con Firebase
+✅ Creación y edición de perfil con Firestore
+✅ Subida y visualización de imágenes de perfil con Firebase Storage
+✅ Mejoras en la UI con AutoCompleteTextView y Glide
+✅ Sincronización en tiempo real con Firestore

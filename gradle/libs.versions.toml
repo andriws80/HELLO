@@ -1,0 +1,65 @@
+[versions]
+# 🔹 AndroidX y Google
+activityKtx = "1.10.1"
+agp = "8.8.2"
+appcompat = "1.7.0"
+circleimageview = "3.1.0"
+constraintlayout = "2.2.1"
+coreKtx = "1.15.0"
+glide = "4.16.0"
+material = "1.12.0"
+navigationKtx = "2.8.9"
+playServicesAuth = "21.3.0"
+
+# 🔹 Firebase
+firebaseBom = "33.10.0"
+firebaseAuth = "23.2.0"
+firebaseFirestore = "25.1.2"
+firebaseStorage = "21.0.1"
+firebaseMessaging = "24.1.0"
+
+# 🔹 Testing
+junit = "4.13.2"
+androidxJunit = "1.2.1"
+espressoCore = "3.6.1"
+
+# 🔹 Otras Librerías
+picasso = "2.8"
+kotlin = "2.1.10"
+playServicesAuthVersion = "20.7.0"
+
+[libraries]
+# 🔹 AndroidX
+androidx-activity-ktx = "androidx.activity:activity-ktx:1.10.1"
+androidx-appcompat = "androidx.appcompat:appcompat:1.7.0"
+androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.2.1"
+androidx-core-ktx = "androidx.core:core-ktx:1.15.0"
+circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
+compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glide" }
+material = "com.google.android.material:material:1.12.0"
+androidx-navigation-fragment-ktx = "androidx.navigation:navigation-fragment-ktx:2.8.9"
+androidx-navigation-ui-ktx = "androidx.navigation:navigation-ui-ktx:2.8.9"
+play-services-auth = "com.google.android.gms:play-services-auth:21.3.0"
+
+# 🔹 Firebase (BoM permite controlar las versiones)
+firebase-bom = "com.google.firebase:firebase-bom:33.10.0"
+firebase-auth-ktx = "com.google.firebase:firebase-auth-ktx:23.2.0"
+firebase-firestore-ktx = "com.google.firebase:firebase-firestore-ktx:25.1.2"
+firebase-storage-ktx = "com.google.firebase:firebase-storage-ktx:21.0.1"
+firebase-messaging-ktx = "com.google.firebase:firebase-messaging-ktx:24.1.0"
+
+# 🔹 Otras Librerías
+picasso = "com.squareup.picasso:picasso:2.8"
+
+# 🔹 Testing
+junit = "junit:junit:4.13.2"
+androidx-junit = "androidx.test.ext:junit:1.2.1"
+androidx-espresso-core = "androidx.test.espresso:espresso-core:3.6.1"
+play-services-auth-v2070 = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuthVersion" }
+
+[plugins]
+android-application = "com.android.application:8.8.2"
+kotlin-android = "org.jetbrains.kotlin.android:2.1.10"
+
