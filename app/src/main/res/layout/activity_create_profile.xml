@@ -120,7 +120,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:entries="@array/paises_ciudades"  <!-- Asegúrate de tener este array en strings.xml -->
+            android:entries="@array/paises_ciudades"
         android:prompt="@string/pais_ciudad_residencia" />  <!--  Y este string -->
 
 
@@ -132,7 +132,7 @@
             android:layout_height="150dp"
             android:layout_marginTop="16dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_profile_placeholder"  <!-- Asegúrate de tener este drawable -->
+            android:src="@drawable/ic_profile_placeholder"
         android:contentDescription="@string/profile_image_description" />
 
         <Button
