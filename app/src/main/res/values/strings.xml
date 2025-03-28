@@ -22,26 +22,162 @@
     <string name="edit_profile">Editar Perfil</string>
     <string name="logout">Cerrar Sesión</string>
 
-    <!-- Pantalla de Registro -->
+    <!-- Pantalla de Registro/Perfil -->
     <string name="edit_profile_title">Editar Perfil</string>
-    <string name="create_profile_title">Crear Perfil</string> <!-- 🔹 Agregado -->
+    <string name="create_profile_title">Crear Perfil</string>
     <string name="section_individual">Datos Individuales</string>
-    <string name="section_conjunto">Datos en Pareja</string>
+    <string name="section_pareja">Datos de la Pareja</string>
+    <string name="section_conjunto">Datos en Conjunto</string>
     <string name="save_registration">Guardar Registro</string>
 
     <!-- Imagen de Perfil -->
-    <string name="profile_image_description">Imagen de perfil</string> <!-- 🔹 Agregado -->
-    <string name="select_image">Seleccionar Imagen</string> <!-- 🔹 Agregado -->
-    <string name="upload_image">Subir Imagen</string> <!-- 🔹 Agregado -->
-    <string name="change_image">Cambiar Imagen</string> <!-- 🔹 Agregado -->
+    <string name="profile_image_description">Imagen de perfil</string>
+    <string name="select_image">Seleccionar Imagen</string>
+    <string name="upload_image">Subir Imagen</string>
+    <string name="change_image">Cambiar Imagen</string>
 
     <!-- Datos Personales -->
-    <string name="name_hint">Nombre</string> <!-- 🔹 Agregado -->
-    <string name="lastname_hint">Apellido</string> <!-- 🔹 Agregado -->
+    <string name="nombres">Nombres</string>
+    <string name="apellido">Apellido</string>
+    <string name="nacionalidad">Nacionalidad</string>
+    <string name="raza">Raza</string>
+    <string name="edad">Edad</string>
+    <string name="personalidad">Personalidad</string>
+    <string name="nivel_academico">Nivel Académico</string>
+    <string name="tipo_personalidad">Tipo de Personalidad</string>
+
+    <!-- Datos de la Pareja -->
+    <string name="nombres_pareja">Nombres (Pareja)</string>
+    <string name="apellido_pareja">Apellido (Pareja)</string>
+    <string name="nacionalidad_pareja">Nacionalidad (Pareja)</string>
+    <string name="raza_pareja">Raza (Pareja)</string>
+    <string name="edad_pareja">Edad (Pareja)</string>
+    <string name="personalidad_pareja">Personalidad (Pareja)</string>
+    <string name="nivel_academico_pareja">Nivel Académico (Pareja)</string>
+    <string name="tipo_personalidad_pareja">Tipo de Personalidad (Pareja)</string>
+
+    <!-- Datos en Conjunto -->
+    <string name="pais_ciudad_residencia">País/Ciudad de Residencia</string>
+    <string name="tipo_relacion">Tipo de Relación</string>
+    <string name="hijos">Hijos</string>
+    <string name="mascotas">Mascotas</string>
+    <string name="religion">Religión</string>
+    <string name="ideologia_politica">Ideología Política</string>
+    <string name="consumo_alcohol">Consumo de Alcohol</string>
+    <string name="consumo_tabaco">Consumo de Tabaco</string>
+    <string name="deportes">Deportes</string>
+    <string name="hobbies">Hobbies</string>
+    <string name="dieta">Dieta</string>
+    <string name="genero_musical">Género Musical</string>
+
+    <!-- Opciones para Spinners (ejemplos, debes completarlos) -->
+    <string-array name="nacionalidades">
+        <item>Seleccionar</item>
+        <item>Argentina</item>
+        <item>Bolivia</item>
+        <!-- ... más nacionalidades ... -->
+    </string-array>
+
+    <string-array name="razas">
+        <item>Seleccionar</item>
+        <item>Mestizo</item>
+        <item>Blanco</item>
+        <item>Afrodescendiente</item>
+        <item>Indígena</item>
+        <!-- ... más razas ... -->
+    </string-array>
+
+    <string-array name="edades">
+        <item>Seleccionar</item>
+        <item>18-25</item>
+        <item>26-35</item>
+        <item>36-45</item>
+        <item>46-55</item>
+        <item>56+</item>
+    </string-array>
+
+    <string-array name="paises_ciudades">
+        <item>Seleccionar</item>
+        <item>La Paz</item>
+        <item>Cochabamba</item>
+        <item>Santa Cruz</item>
+        <!-- ... más ciudades ... -->
+    </string-array>
+
+    <string-array name="tipos_relacion">
+        <item>Seleccionar</item>
+        <item>Casado(a)</item>
+        <item>Unión Libre</item>
+        <item>Noviazgo</item>
+        <item>Relación Abierta</item>
+        <!-- ... otros tipos ... -->
+    </string-array>
+
+    <string-array name="cantidades_hijos">
+        <item>Seleccionar</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3+</item>
+    </string-array>
+
+    <string-array name="dietas">
+        <item>Seleccionar</item>
+        <item>Omnívoro</item>
+        <item>Vegetariano</item>
+        <item>Vegano</item>
+        <!-- ... otras dietas ... -->
+    </string-array>
+
+    <!-- Strings para CheckBoxes y RadioButtons (ejemplos) -->
+    <string name="personalidad_opcion_1">Amable</string>
+    <string name="personalidad_opcion_2">Extrovertido</string>
+    <!-- ... más opciones de personalidad ... -->
+
+    <string name="nivel_academico_opcion_1">Primaria</string>
+    <string name="nivel_academico_opcion_2">Secundaria</string>
+    <!-- ... más opciones de nivel académico ... -->
+
+    <string name="tipo_personalidad_opcion_1">Introvertido</string>
+    <string name="tipo_personalidad_opcion_2">Extrovertido</string>
+    <!-- ... más opciones de tipo de personalidad ... -->
+
+    <string name="mascotas_opcion_1">Perro</string>
+    <string name="mascotas_opcion_2">Gato</string>
+    <!-- ... más opciones de mascotas ... -->
+
+    <string name="religion_opcion_1">Católico</string>
+    <string name="religion_opcion_2">Cristiano</string>
+    <!-- ... más opciones de religión ... -->
+
+    <string name="ideologia_politica_opcion_1">Izquierda</string>
+    <string name="ideologia_politica_opcion_2">Derecha</string>
+    <string name="ideologia_politica_opcion_3">Centro</string>
+    <!-- ... más opciones de ideología política ... -->
+
+    <string name="consumo_alcohol_opcion_1">Nunca</string>
+    <string name="consumo_alcohol_opcion_2">Socialmente</string>
+    <string name="consumo_alcohol_opcion_3">Regularmente</string>
+
+    <string name="consumo_tabaco_opcion_1">Nunca</string>
+    <string name="consumo_tabaco_opcion_2">Ocasionalmente</string>
+    <string name="consumo_tabaco_opcion_3">Diariamente</string>
+
+    <string name="deportes_opcion_1">Fútbol</string>
+    <string name="deportes_opcion_2">Baloncesto</string>
+    <!-- ... más opciones de deportes ... -->
+
+    <string name="hobbies_opcion_1">Lectura</string>
+    <string name="hobbies_opcion_2">Viajar</string>
+    <!-- ... más opciones de hobbies ... -->
+
+    <string name="genero_musical_opcion_1">Rock</string>
+    <string name="genero_musical_opcion_2">Pop</string>
+    <!-- ... más opciones de género musical ... -->
 
     <!-- Guardar Cambios -->
-    <string name="save_changes">Guardar Cambios</string> <!-- 🔹 Agregado -->
-    <string name="save_profile">Guardar Perfil</string> <!-- 🔹 Agregado -->
+    <string name="save_changes">Guardar Cambios</string>
+    <string name="save_profile">Guardar Perfil</string>
 
     <!-- Notificaciones -->
     <string name="default_notification_channel_id">canal_notificaciones_default</string>
