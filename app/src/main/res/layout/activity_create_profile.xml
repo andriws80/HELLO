@@ -1,116 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:padding="24dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="16dp">
+        android:gravity="center"
+        tools:ignore="ExtraText">
 
-        <!-- Nombres individuales -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_profile_title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+
         <EditText
             android:id="@+id/nombresEditText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/hint_names"
-            android:inputType="textPersonName" />
+            android:layout_height="48dp"
+            android:minHeight="48dp"
+            android:hint="@string/name_hint"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"/>
 
-        <!-- País de Residencia -->
         <Spinner
             android:id="@+id/paisResidenciaSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:prompt="@string/select_country" />
+            android:layout_marginTop="8dp" />
 
-        <!-- Ciudad de Residencia -->
-        <Spinner
-            android:id="@+id/ciudadResidenciaSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:prompt="@string/select_city" />
-
-        <!-- Tipo de Unión -->
-        <Spinner
-            android:id="@+id/tipoUnionSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:prompt="@string/select_union_type" />
-
-        <!-- Cantidad de Hijos -->
-        <Spinner
-            android:id="@+id/hijosSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:prompt="@string/select_children_count" />
-
-        <!-- Hobbies (Selección Múltiple) -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/select_hobbies" />
-        <GridView
-            android:id="@+id/hobbiesGridView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numColumns="2" />
-
-        <!-- Deportes (Selección Múltiple) -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/select_sports" />
-        <GridView
-            android:id="@+id/deportesGridView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numColumns="2" />
-
-        <!-- Género Musical Preferido (Selección Múltiple) -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/select_music_genre" />
-        <GridView
-            android:id="@+id/generoMusicalGridView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numColumns="2" />
-
-        <!-- Imagen de Perfil -->
         <ImageView
             android:id="@+id/profileImageView"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/ic_profile_placeholder"
             android:scaleType="centerCrop"
-            android:background="@android:color/darker_gray"
+            android:src="@drawable/ic_profile_placeholder"
             android:contentDescription="@string/profile_image_description" />
 
         <Button
             android:id="@+id/selectImageButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/select_image" />
+            android:text="@string/select_image"
+            android:layout_marginTop="8dp"/>
 
         <Button
             android:id="@+id/uploadImageButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/upload_image" />
+            android:text="@string/upload_image"
+            android:layout_marginTop="8dp"/>
 
         <Button
             android:id="@+id/guardarPerfilButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/save_profile"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"/>
+
     </LinearLayout>
+
 </ScrollView>
-
-

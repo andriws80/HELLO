@@ -2,160 +2,189 @@ package com.andriws.hello
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.ImageDecoder
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
-import android.view.View
+import android.provider.MediaStore
+import android.util.Log
 import android.widget.*
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import java.io.ByteArrayOutputStream
 
 class EditProfileActivity : AppCompatActivity() {
 
-    private lateinit var profileImageView: ImageView
-    private lateinit var changeImageButton: Button
-    private lateinit var nombresEditText: EditText
-    private lateinit var nacionalidadSpinner: Spinner
-    private lateinit var guardarCambiosButton: Button
-    private lateinit var progressBar: ProgressBar
-    private lateinit var db: FirebaseFirestore
     private lateinit var auth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
     private lateinit var storage: FirebaseStorage
-
     private var imageUri: Uri? = null
 
-    private val imagePickerLauncher =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                imageUri = result.data?.data
-                Glide.with(this).load(imageUri).into(profileImageView)
+    private lateinit var nombreEditText: EditText
+    private lateinit var apellidoEditText: EditText
+    private lateinit var nacionalidadSpinner: Spinner
+    private lateinit var profileImageView: ImageView
+    private lateinit var changeImageButton: Button
+    private lateinit var saveChangesButton: Button
+
+    private val pickImageLauncher = registerForActivityResult(StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) { // Corregido: se eliminó "Activity."
+            result.data?.data?.let { uri ->
+                imageUri = uri
+                profileImageView.setImageURI(uri)
             }
         }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_profile)
 
-        db = FirebaseFirestore.getInstance()
         auth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
         storage = FirebaseStorage.getInstance()
 
+        nombreEditText = findViewById(R.id.nombreEditText)
+        apellidoEditText = findViewById(R.id.apellidoEditText)
+        nacionalidadSpinner = findViewById(R.id.nacionalidadSpinner)
         profileImageView = findViewById(R.id.profileImageView)
         changeImageButton = findViewById(R.id.changeImageButton)
-        nombresEditText = findViewById(R.id.nombresEditText)
-        nacionalidadSpinner = findViewById(R.id.nacionalidadSpinner)
-        guardarCambiosButton = findViewById(R.id.guardarCambiosButton)
-        progressBar = findViewById(R.id.progressBar)
+        saveChangesButton = findViewById(R.id.guardarCambiosButton)
 
-        progressBar.visibility = View.GONE
+        loadUserProfile()
 
         changeImageButton.setOnClickListener {
-            selectImage()
+            pickImageFromGallery()
         }
 
-        configurarSpinner()
-        cargarPerfil()
+        saveChangesButton.setOnClickListener {
+            val nombre = nombreEditText.text.toString().trim()
+            val apellido = apellidoEditText.text.toString().trim()
+            val nacionalidad = nacionalidadSpinner.selectedItem?.toString() ?: ""
 
-        guardarCambiosButton.setOnClickListener {
-            validateAndSaveProfile()
-        }
-    }
-
-    private fun selectImage() {
-        val intent = Intent(Intent.ACTION_PICK)
-        intent.type = "image/*"
-        imagePickerLauncher.launch(intent)
-    }
-
-    private fun uploadImage(onSuccess: (String) -> Unit) {
-        if (imageUri == null) {
-            onSuccess("")
-            return
-        }
-
-        progressBar.visibility = View.VISIBLE
-        val storageRef = storage.reference.child("profile_images/${auth.currentUser?.uid}.jpg")
-
-        storageRef.putFile(imageUri!!)
-            .addOnSuccessListener {
-                storageRef.downloadUrl.addOnSuccessListener { uri ->
-                    onSuccess(uri.toString())
-                    progressBar.visibility = View.GONE
-                }
+            if (nombre.isEmpty() || apellido.isEmpty()) {
+                Toast.makeText(this, "Ingrese su nombre y apellido", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
-            .addOnFailureListener {
-                Snackbar.make(guardarCambiosButton, "Error al subir imagen", Snackbar.LENGTH_LONG).show()
-                progressBar.visibility = View.GONE
+
+            if (imageUri != null) {
+                uploadImageAndSaveProfile(nombre, apellido, nacionalidad)
+            } else {
+                updateProfileInFirestore(nombre, apellido, nacionalidad, null)
             }
+        }
     }
 
-    private fun cargarPerfil() {
-        val usuarioId = auth.currentUser?.uid ?: return
+    private fun pickImageFromGallery() {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        pickImageLauncher.launch(intent)
+    }
 
-        db.collection("perfiles").document(usuarioId).get()
-            .addOnSuccessListener { document ->
-                if (document.exists()) {
-                    nombresEditText.setText(document.getString("nombres"))
+    private fun loadUserProfile() {
+        auth.currentUser?.uid?.let { userId ->
+            firestore.collection("perfiles").document(userId)
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document.exists()) {
+                        val nombre = document.getString("nombres") ?: "Usuario"
+                        val apellido = document.getString("apellido") ?: "No especificado"
+                        val nacionalidad = document.getString("nacionalidad") ?: "No especificado"
 
-                    val nacionalidad = document.getString("nacionalidad")
-                    val nacionalidadArray = resources.getStringArray(R.array.nacionalidades)
-                    val position = nacionalidadArray.indexOf(nacionalidad)
-                    if (position >= 0) {
-                        nacionalidadSpinner.setSelection(position)
-                    }
+                        Log.d("Firestore", "Nombre: $nombre, Apellido: $apellido, Nacionalidad: $nacionalidad")
 
-                    val imageUrl = document.getString("imagenPerfil")
-                    if (!imageUrl.isNullOrEmpty()) {
-                        Glide.with(this)
-                            .load(imageUrl)
-                            .placeholder(R.drawable.ic_profile_placeholder)
-                            .error(R.drawable.ic_error_image)
-                            .into(profileImageView)
+                        nombreEditText.setText(nombre)
+                        apellidoEditText.setText(apellido)
+
+                        val adapter = nacionalidadSpinner.adapter as? ArrayAdapter<String>
+                        adapter?.getPosition(nacionalidad)?.let { index ->
+                            if (index >= 0) nacionalidadSpinner.setSelection(index)
+                        }
+
+                        document.getString("profileImageUrl")?.takeIf { it.isNotEmpty() }?.let { imageUrl ->
+                            Glide.with(this).load(imageUrl).into(profileImageView)
+                        }
+                    } else {
+                        Log.e("Firestore", "El documento no existe en Firestore")
                     }
                 }
-            }
-            .addOnFailureListener {
-                Snackbar.make(guardarCambiosButton, "Error al cargar perfil", Snackbar.LENGTH_LONG).show()
-            }
+                .addOnFailureListener { e ->
+                    Log.e("Firestore", "Error al obtener el perfil", e)
+                }
+        }
     }
 
-    private fun validateAndSaveProfile() {
-        val nombres = nombresEditText.text.toString().trim()
-        val nacionalidad = nacionalidadSpinner.selectedItem.toString()
+    private fun uploadImageAndSaveProfile(nombre: String, apellido: String, nacionalidad: String) {
+        auth.currentUser?.uid?.let { userId ->
+            val storageRef = storage.reference.child("profile_images/$userId.jpg")
 
-        if (nombres.isEmpty()) {
-            nombresEditText.error = "Este campo es obligatorio"
-            return
+            getBitmapFromUri(imageUri)?.let { bitmap ->
+                val baos = ByteArrayOutputStream()
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos)
+                val imageData = baos.toByteArray()
+
+                storageRef.putBytes(imageData)
+                    .addOnSuccessListener {
+                        storageRef.downloadUrl.addOnSuccessListener { uri ->
+                            updateProfileInFirestore(nombre, apellido, nacionalidad, uri.toString())
+                        }
+                    }
+                    .addOnFailureListener { e ->
+                        Log.e("EditProfile", "Error al subir imagen", e)
+                        Toast.makeText(this, "Error al subir imagen", Toast.LENGTH_SHORT).show()
+                    }
+            } ?: Toast.makeText(this, "Error al procesar la imagen", Toast.LENGTH_SHORT).show()
         }
+    }
 
-        uploadImage { imageUrl ->
-            val usuarioId = auth.currentUser?.uid ?: return@uploadImage
-            val perfilActualizado = hashMapOf(
-                "nombres" to nombres,
-                "nacionalidad" to nacionalidad,
-                "imagenPerfil" to imageUrl
+    private fun getBitmapFromUri(uri: Uri?): Bitmap? {
+        return try {
+            uri?.let {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                    val source = ImageDecoder.createSource(contentResolver, it)
+                    ImageDecoder.decodeBitmap(source)
+                } else {
+                    @Suppress("DEPRECATION")
+                    MediaStore.Images.Media.getBitmap(contentResolver, it)
+                }
+            }
+        } catch (e: Exception) {
+            Log.e("EditProfile", "Error al obtener el bitmap", e)
+            null
+        }
+    }
+
+    private fun updateProfileInFirestore(nombre: String, apellido: String, nacionalidad: String, imageUrl: String?) {
+        auth.currentUser?.uid?.let { userId ->
+            val profileUpdates = mutableMapOf(
+                "nombres" to nombre,
+                "apellido" to apellido,
+                "nacionalidad" to nacionalidad
             )
 
-            db.collection("perfiles").document(usuarioId)
-                .update(perfilActualizado as Map<String, Any>)
+            imageUrl?.let {
+                profileUpdates["profileImageUrl"] = it
+            }
+
+            firestore.collection("perfiles").document(userId)
+                .set(profileUpdates)
                 .addOnSuccessListener {
-                    Snackbar.make(guardarCambiosButton, "Perfil guardado con éxito", Snackbar.LENGTH_LONG).show()
+                    Toast.makeText(this, "Perfil actualizado con éxito", Toast.LENGTH_SHORT).show()
+                    navigateNext()
                 }
-                .addOnFailureListener {
-                    Snackbar.make(guardarCambiosButton, "Error al guardar el perfil", Snackbar.LENGTH_LONG).show()
+                .addOnFailureListener { e ->
+                    Log.e("EditProfile", "Error al actualizar perfil", e)
+                    Toast.makeText(this, "Error al actualizar perfil", Toast.LENGTH_SHORT).show()
                 }
         }
     }
 
-    private fun configurarSpinner() {
-        val nacionalidades = resources.getStringArray(R.array.nacionalidades)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, nacionalidades)
-        nacionalidadSpinner.adapter = adapter
+    private fun navigateNext() {
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }
-
-

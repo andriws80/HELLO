@@ -1,79 +1,51 @@
 <resources>
-    <string name="app_name">HELLO</string>
-    <string name="action_settings">Configuración</string>
-    <string name="default_web_client_id">290963246421-imn7dgud9862g82bs2aq6tfiqg4p168b.apps.googleusercontent.com</string>
-
-    <!-- Cadenas para la autenticación -->
-    <string name="hint_email">Correo electrónico</string>
-    <string name="hint_password">Contraseña</string>
-    <string name="login">Iniciar sesión</string>
-    <string name="login_google">Iniciar con Google</string>
-    <string name="register">Registrarse</string>
-
-    <!-- Cadenas para la edición y creación de perfil -->
-    <string name="hint_names">Nombres</string>
-    <string name="select_nationality">Seleccionar nacionalidad</string>
-    <string name="save_profile">Guardar perfil</string>
-    <string name="select_image">Seleccionar imagen</string>
-    <string name="upload_image">Subir imagen</string>
-    <string name="profile_image_description">Imagen de perfil</string>
-    <string name="select_country">Selecciona un país</string>
-    <string name="select_city">Selecciona una ciudad</string>
-    <string name="select_union_type">Selecciona el tipo de unión</string>
-    <string name="select_children_count">Selecciona la cantidad de hijos</string>
-    <string name="select_hobbies">Selecciona tus pasatiempos</string>
-    <string name="select_sports">Selecciona tus deportes favoritos</string>
-    <string name="select_music_genre">Selecciona tu género musical favorito</string>
-
-    <!-- Lista de nacionalidades -->
-    <string-array name="nacionalidades">
-        <item>Argentina</item>
-        <item>Bolivia</item>
-        <item>Brasil</item>
-        <item>Chile</item>
-        <item>Colombia</item>
-        <item>Costa Rica</item>
-        <item>Cuba</item>
-        <item>Ecuador</item>
-        <item>El Salvador</item>
-        <item>España</item>
-        <item>Guatemala</item>
-        <item>Honduras</item>
-        <item>México</item>
-        <item>Nicaragua</item>
-        <item>Panamá</item>
-        <item>Paraguay</item>
-        <item>Perú</item>
-        <item>Puerto Rico</item>
-        <item>República Dominicana</item>
-        <item>Uruguay</item>
-        <item>Venezuela</item>
-    </string-array>
-
-    <!-- Mensajes de validación -->
-    <string name="error_empty_names">Este campo es obligatorio</string>
-    <string name="error_select_nationality">Seleccione una nacionalidad</string>
-
-    <!-- Mensajes de notificación -->
-    <string name="error_loading_profile">Error al cargar el perfil</string>
-    <string name="profile_updated_successfully">Perfil actualizado con éxito</string>
-    <string name="error_updating_profile">Error al actualizar el perfil</string>
-    <string name="profile_saved_successfully">Perfil guardado con éxito</string>
-    <string name="error_saving_profile">Error al guardar el perfil</string>
-    <string name="image_uploaded_successfully">Imagen subida con éxito</string>
-    <string name="error_uploading_image">Error al subir la imagen</string>
-    <string name="select_image_first">Selecciona una imagen primero</string>
-
-    <!-- Nuevas cadenas agregadas -->
-    <string name="welcome_message">Bienvenido a la aplicación</string>
-    <string name="logout">Cerrar sesión</string>
-    <string name="send_email">Enviar correo electrónico</string>
-
-    <!-- Otras cadenas -->
+    <!-- Strings generales -->
+    <string name="app_name">Hello App</string>
     <string name="next">Siguiente</string>
     <string name="previous">Anterior</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+
+    <!-- Fragment Labels -->
     <string name="first_fragment_label">Primer Fragmento</string>
     <string name="second_fragment_label">Segundo Fragmento</string>
-</resources>
 
+    <!-- Pantalla de Login -->
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="email_hint">Correo Electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Ingresar</string>
+    <string name="google_signin_button">Iniciar con Google</string>
+    <string name="dont_have_account">¿No tienes cuenta?</string>
+
+    <!-- Pantalla de Bienvenida -->
+    <string name="welcome_text">¡Bienvenidos a nuestra app!</string>
+    <string name="edit_profile">Editar Perfil</string>
+    <string name="logout">Cerrar Sesión</string>
+
+    <!-- Pantalla de Registro -->
+    <string name="edit_profile_title">Editar Perfil</string>
+    <string name="create_profile_title">Crear Perfil</string> <!-- 🔹 Agregado -->
+    <string name="section_individual">Datos Individuales</string>
+    <string name="section_conjunto">Datos en Pareja</string>
+    <string name="save_registration">Guardar Registro</string>
+
+    <!-- Imagen de Perfil -->
+    <string name="profile_image_description">Imagen de perfil</string> <!-- 🔹 Agregado -->
+    <string name="select_image">Seleccionar Imagen</string> <!-- 🔹 Agregado -->
+    <string name="upload_image">Subir Imagen</string> <!-- 🔹 Agregado -->
+    <string name="change_image">Cambiar Imagen</string> <!-- 🔹 Agregado -->
+
+    <!-- Datos Personales -->
+    <string name="name_hint">Nombre</string> <!-- 🔹 Agregado -->
+    <string name="lastname_hint">Apellido</string> <!-- 🔹 Agregado -->
+
+    <!-- Guardar Cambios -->
+    <string name="save_changes">Guardar Cambios</string> <!-- 🔹 Agregado -->
+    <string name="save_profile">Guardar Perfil</string> <!-- 🔹 Agregado -->
+
+    <!-- Notificaciones -->
+    <string name="default_notification_channel_id">canal_notificaciones_default</string>
+
+    <!-- Menú de configuración -->
+    <string name="action_settings">Configuración</string>
+</resources>

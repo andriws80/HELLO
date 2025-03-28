@@ -5,137 +5,132 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.ImageDecoder
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Spinner
-import android.widget.ArrayAdapter
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import com.squareup.picasso.Picasso
 import java.io.ByteArrayOutputStream
 
 class CreateProfileActivity : AppCompatActivity() {
 
-    private lateinit var profileImageView: ImageView
-    private lateinit var selectImageButton: Button
-    private lateinit var uploadImageButton: Button
-    private lateinit var nacionalidadSpinner: Spinner
+    private lateinit var auth: FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
+    private lateinit var storage: FirebaseStorage
     private var imageUri: Uri? = null
-    private val storageReference = FirebaseStorage.getInstance().reference
-    private val db = FirebaseFirestore.getInstance()
-    private val auth = FirebaseAuth.getInstance()
 
-    private val pickImageLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            imageUri = result.data?.data
-            profileImageView.setImageURI(imageUri)
+    private val pickImageLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val data: Intent? = result.data
+                imageUri = data?.data
+                findViewById<ImageView>(R.id.profileImageView).setImageURI(imageUri)
+            }
         }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_profile)
 
-        profileImageView = findViewById(R.id.profileImageView)
-        selectImageButton = findViewById(R.id.selectImageButton)
-        uploadImageButton = findViewById(R.id.uploadImageButton)
-        nacionalidadSpinner = findViewById(R.id.nacionalidadSpinner)
+        auth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
+        storage = FirebaseStorage.getInstance()
 
-        // Configurar Spinner de Nacionalidades
-        val nacionalidades = listOf("Argentina", "Brasil", "Colombia", "México", "España", "Otro")
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, nacionalidades)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        nacionalidadSpinner.adapter = adapter
+        val nombresEditText = findViewById<EditText>(R.id.nombresEditText)
+        val paisResidenciaSpinner = findViewById<Spinner>(R.id.paisResidenciaSpinner)
+        val selectImageButton = findViewById<Button>(R.id.selectImageButton)
+        val uploadImageButton = findViewById<Button>(R.id.uploadImageButton)
+        val guardarPerfilButton = findViewById<Button>(R.id.guardarPerfilButton)
 
-        // Seleccionar imagen de la galería
         selectImageButton.setOnClickListener {
-            val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-            pickImageLauncher.launch(intent)
+            pickImageFromGallery()
         }
 
-        // Subir imagen a Firebase Storage
         uploadImageButton.setOnClickListener {
-            imageUri?.let { uri ->
-                uploadImageToFirebase(uri)
-            } ?: Toast.makeText(this, "Selecciona una imagen primero", Toast.LENGTH_SHORT).show()
+            if (imageUri != null) {
+                uploadImageToFirebase { imageUrl ->
+                    Toast.makeText(this, "Imagen subida correctamente", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(this, "Selecciona una imagen primero", Toast.LENGTH_SHORT).show()
+            }
         }
 
-        // Cargar imagen actual si existe
-        loadUserProfileImage()
+        guardarPerfilButton.setOnClickListener {
+            val nombres = nombresEditText.text.toString().trim()
+            val pais = paisResidenciaSpinner.selectedItem.toString()
+
+            if (nombres.isEmpty()) {
+                Toast.makeText(this, "Ingrese los nombres", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            saveProfileToFirestore(nombres, pais)
+        }
     }
 
-    private fun uploadImageToFirebase(uri: Uri) {
+    private fun pickImageFromGallery() {
+        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
+        pickImageLauncher.launch(intent)
+    }
+
+    private fun uploadImageToFirebase(onSuccess: (String) -> Unit) {
         val userId = auth.currentUser?.uid ?: return
-        val fileRef = storageReference.child("users/$userId/profile.jpg")
+        val storageRef = storage.reference.child("profile_pictures/$userId.jpg")
 
         try {
-            val source = ImageDecoder.createSource(contentResolver, uri)
-            val bitmap = ImageDecoder.decodeBitmap(source)
-            val baos = ByteArrayOutputStream()
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, baos)
-            val data = baos.toByteArray()
+            val bitmap: Bitmap = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                val source = ImageDecoder.createSource(contentResolver, imageUri!!)
+                ImageDecoder.decodeBitmap(source)
+            } else {
+                @Suppress("DEPRECATION")
+                MediaStore.Images.Media.getBitmap(contentResolver, imageUri)
+            }
 
-            fileRef.putBytes(data)
+            val byteArrayOutputStream = ByteArrayOutputStream()
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream)
+            val imageData = byteArrayOutputStream.toByteArray()
+
+            storageRef.putBytes(imageData)
                 .addOnSuccessListener {
-                    fileRef.downloadUrl.addOnSuccessListener { downloadUri ->
-                        saveImageUrlToFirestore(downloadUri.toString())
+                    storageRef.downloadUrl.addOnSuccessListener { uri ->
+                        val imageUrl = uri.toString()
+                        firestore.collection("perfiles").document(userId)
+                            .update("profileImageUrl", imageUrl)
+                            .addOnSuccessListener {
+                                onSuccess(imageUrl)
+                            }
                     }
                 }
                 .addOnFailureListener {
-                    Toast.makeText(this, "Error al subir imagen", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Error al subir la imagen", Toast.LENGTH_SHORT).show()
                 }
         } catch (e: Exception) {
             Toast.makeText(this, "Error al procesar la imagen", Toast.LENGTH_SHORT).show()
-            Log.e("UPLOAD_IMAGE", "Error al decodificar imagen", e)
         }
     }
 
-    private fun saveImageUrlToFirestore(imageUrl: String) {
+    private fun saveProfileToFirestore(nombres: String, pais: String) {
         val userId = auth.currentUser?.uid ?: return
+        val profileData = hashMapOf(
+            "nombres" to nombres,
+            "paisResidencia" to pais,
+            "userId" to userId
+        )
 
-        db.collection("perfiles").document(userId)
-            .update("fotoPerfil", imageUrl)
+        firestore.collection("perfiles").document(userId)
+            .set(profileData)
             .addOnSuccessListener {
-                Toast.makeText(this, "Imagen guardada", Toast.LENGTH_SHORT).show()
-                Picasso.get().load(imageUrl).into(profileImageView)
+                Toast.makeText(this, "Perfil guardado con éxito", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }
             .addOnFailureListener {
-                Toast.makeText(this, "Error al guardar imagen", Toast.LENGTH_SHORT).show()
-            }
-    }
-
-    private fun loadUserProfileImage() {
-        val userId = auth.currentUser?.uid ?: return
-
-        db.collection("perfiles").document(userId).get()
-            .addOnSuccessListener { document ->
-                val imageUrl = document.getString("fotoPerfil")
-                if (!imageUrl.isNullOrEmpty()) {
-                    Picasso.get().load(imageUrl).into(profileImageView)
-                }
-
-                @Suppress("UNCHECKED_CAST")
-                val adapter = nacionalidadSpinner.adapter as? ArrayAdapter<String>
-                val nacionalidad = document.getString("nacionalidad")
-
-                if (adapter != null) {
-                    val posicion = nacionalidad?.let { adapter.getPosition(it) } ?: -1
-                    if (posicion >= 0) {
-                        nacionalidadSpinner.setSelection(posicion)
-                    }
-                } else {
-                    Log.e("SPINNER", "El adaptador del Spinner no es un ArrayAdapter<String>")
-                }
-            }
-            .addOnFailureListener {
-                Log.e("FIRESTORE", "Error al obtener imagen de perfil")
+                Toast.makeText(this, "Error al guardar el perfil", Toast.LENGTH_SHORT).show()
             }
     }
 }

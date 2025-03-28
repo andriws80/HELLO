@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#000000</color>
-    <color name="dark_gray">#666666</color>
+
+    <!-- Colores principales -->
     <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryVariant">#3700B3</color>
+    <color name="colorSecondary">#03DAC5</color>
+    <color name="colorBackground">#FFFFFF</color>
+
+    <!-- Textos -->
+    <color name="colorTextPrimary">#000000</color>
+    <color name="colorTextSecondary">#333333</color>
+
+    <!-- Botones y fondos -->
+    <color name="dark_gray">#424242</color>
+    <color name="button_gray">#666666</color>
+    <color name="accessible_blue">#0057B7</color>
+
+    <!-- Fondos adicionales -->
+    <color name="background_gray">#D0D0D0</color>
+
+    <!-- Extras -->
+    <color name="white">#FFFFFF</color>
+    <color name="dark_blue">#1E3A8A</color>
+    <color name="black">#000000</color>
+
+
 </resources>
