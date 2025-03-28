@@ -26,14 +26,10 @@
     <string name="edit_profile_title">Editar Perfil</string>
     <string name="create_profile_title">Crear Perfil</string>
     <string name="section_individual">Datos Individuales</string>
-    <!--  Cambios realizados:  -->
-    <string name="name_hint">Nombres</string>  <!--  "nombres"  -->
-    <string name="lastname_hint">Apellido</string>  <!--  "apellido"  -->
-    <!--  "correo_electronico"  -->
-    <!--  "contrasena"  -->
+    <string name="name_hint">Nombres</string>
+    <string name="lastname_hint">Apellido</string>
     <string name="section_pareja">Datos de la Pareja</string>
     <string name="section_conjunto">Datos en Conjunto</string>
-    <!--  "guardar_registro"  -->
 
     <!-- Imagen de Perfil -->
     <string name="profile_image_description">Imagen de perfil</string>
@@ -50,6 +46,8 @@
     <string name="personalidad">Personalidad</string>
     <string name="nivel_academico">Nivel Académico</string>
     <string name="tipo_personalidad">Tipo de Personalidad</string>
+    <string name="email_hint2">Correo Electrónico</string>
+    <string name="password_hint2">Contraseña</string>
 
     <!-- Datos de la Pareja -->
     <string name="nombres_pareja">Nombres (Pareja)</string>
@@ -165,7 +163,7 @@
     <string name="consumo_alcohol_opcion_3">Regularmente</string>
 
     <string name="consumo_tabaco_opcion_1">Nunca</string>
-    <string name="consumo_tabaco_opcion__2">Ocasionalmente</string>
+    <string name="consumo_tabaco_opcion_2">Ocasionalmente</string>
     <string name="consumo_tabaco_opcion_3">Diariamente</string>
 
     <string name="deportes_opcion_1">Fútbol</string>
@@ -189,7 +187,6 @@
 
     <!-- Menú de configuración -->
     <string name="action_settings">Configuración</string>
-    <string name="correo_electronico">Correo Electrónico</string>
-    <string name="contrasena">Contraseña</string>
     <string name="guardar_registro">Guardar Registro</string>
+    <string name="pais_ciudad_pareja_hint">País/Ciudad de Residencia (Pareja)</string>  <!-- Hint añadido -->
 </resources>

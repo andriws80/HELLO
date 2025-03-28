@@ -148,7 +148,7 @@
             android:id="@+id/registerButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/save_registration"
+            android:text="@string/guardar_registro"
             android:minHeight="48dp" />
     </LinearLayout>
 </ScrollView>
