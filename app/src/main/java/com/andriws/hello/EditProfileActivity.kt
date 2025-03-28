@@ -63,12 +63,12 @@ class EditProfileActivity : AppCompatActivity() {
         firestore = FirebaseFirestore.getInstance()
         storage = FirebaseStorage.getInstance()
 
-       nombreEditText = findViewById(R.id.nombres)
+       nombreEditText = findViewById(R.id.nombresEditText)
         apellidoEditText = findViewById(R.id.apellidoEditText)
         nacionalidadSpinner = findViewById(R.id.nacionalidadSpinner)
         profileImageView = findViewById(R.id.profileImageView)
-        changeImageButton = findViewById(R.id.changeImageButton)
-        saveChangesButton = findViewById(R.id.guardarCambiosButton)
+        changeImageButton = findViewById(R.id.selectImageButton)
+        saveChangesButton = findViewById(R.id.guardarPerfilButton)
 
         // Configurar elementos dinámicos
         setupCheckBoxes(personalidades, R.id.personalidadCheckBoxes)

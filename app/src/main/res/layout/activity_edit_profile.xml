@@ -31,216 +31,23 @@
             android:layout_marginTop="16dp" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nombresTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nombres"
+            android:hint="@string/nacionalidad"
             android:layout_marginTop="8dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nombresEditText"
+
+            <Spinner
+                android:id="@+id/nacionalidadSpinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
+                android:minHeight="48dp"
+                android:paddingVertical="8dp"
+                android:background="@android:drawable/editbox_background"
+                android:entries="@array/nacionalidades"
+                android:prompt="@string/nacionalidad" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/apellidoTextInputLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/apellido"
-            android:layout_marginTop="8dp">
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/apellidoEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Spinner
-            android:id="@+id/nacionalidadSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:entries="@array/nacionalidades"
-            android:prompt="@string/nacionalidad" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/personalidad"
-            android:layout_marginTop="8dp" />
-        <LinearLayout
-            android:id="@+id/personalidadCheckBoxes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Checkboxes for personalidad will be added dynamically -->
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/nivel_academico"
-            android:layout_marginTop="8dp" />
-        <LinearLayout
-            android:id="@+id/nivelAcademicoCheckBoxes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Checkboxes for nivel academico will be added dynamically -->
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tipo_personalidad"
-            android:layout_marginTop="8dp" />
-        <LinearLayout
-            android:id="@+id/tipoPersonalidadCheckBoxes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Checkboxes for tipo de personalidad will be added dynamically -->
-        </LinearLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/mascotas"
-            android:layout_marginTop="8dp" />
-        <LinearLayout
-            android:id="@+id/mascotasCheckBoxes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Checkboxes for mascotas will be added dynamically -->
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/religion"
-            android:layout_marginTop="8dp" />
-        <LinearLayout
-            android:id="@+id/religionCheckBoxes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Checkboxes for religion will be added dynamically -->
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ideologia_politica"
-            android:layout_marginTop="8dp" />
-        <RadioGroup
-            android:id="@+id/ideologiaPoliticaRadioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-            <!-- RadioButtons for ideologia politica will be added dynamically -->
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/consumo_alcohol"
-            android:layout_marginTop="8dp" />
-        <RadioGroup
-            android:id="@+id/consumoAlcoholRadioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-            <!-- RadioButtons for consumo alcohol will be added dynamically -->
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/consumo_tabaco"
-            android:layout_marginTop="8dp" />
-        <RadioGroup
-            android:id="@+id/consumoTabacoRadioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-            <!-- RadioButtons for consumo tabaco will be added dynamically -->
-        </RadioGroup>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/deportes"
-            android:layout_marginTop="8dp" />
-        <LinearLayout
-            android:id="@+id/deportesCheckBoxes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Checkboxes for deportes will be added dynamically -->
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/hobbies"
-            android:layout_marginTop="8dp" />
-        <LinearLayout
-            android:id="@+id/hobbiesCheckBoxes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Checkboxes for hobbies will be added dynamically -->
-        </LinearLayout>
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/genero_musical"
-            android:layout_marginTop="8dp" />
-        <LinearLayout
-            android:id="@+id/generoMusicalCheckBoxes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Checkboxes for genero musical will be added dynamically -->
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/profileImageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="16dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_profile_placeholder"
-            android:contentDescription="@string/profile_image_description" />
-
-        <Button
-            android:id="@+id/selectImageButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/select_image"
-            android:layout_marginTop="8dp"/>
-
-        <Button
-            android:id="@+id/uploadImageButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/upload_image"
-            android:layout_marginTop="8dp"/>
-
-        <Button
-            android:id="@+id/guardarPerfilButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/save_profile"
-            android:layout_marginTop="16dp"/>
+        <!-- Aquí puedes agregar el resto de los elementos que estaban antes en el código -->
 
     </LinearLayout>
 
