@@ -39,8 +39,8 @@ android {
 }
 
 dependencies {
-    // Glide para carga de imágenes
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+    // Glide para carga de imágenes  <-- ÚNICA declaración, con kapt y versión 4.16.0
+    implementation(libs.glide)
     kapt("com.github.bumptech.glide:compiler:4.16.0")
 
     // Dependencias de AndroidX

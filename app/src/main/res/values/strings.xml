@@ -179,7 +179,7 @@
     <!-- ... más opciones de género musical ... -->
 
     <!-- Guardar Cambios -->
-    <string name="save_changes">Guardar Cambios</string>
+    <string name="guardar_cambios">Guardar cambios</string>
     <string name="save_profile">Guardar Perfil</string>
 
     <!-- Notificaciones -->
@@ -189,4 +189,5 @@
     <string name="action_settings">Configuración</string>
     <string name="guardar_registro">Guardar Registro</string>
     <string name="pais_ciudad_pareja_hint">País/Ciudad de Residencia (Pareja)</string>  <!-- Hint añadido -->
+
 </resources>

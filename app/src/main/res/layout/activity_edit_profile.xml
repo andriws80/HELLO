@@ -21,6 +21,22 @@
             android:textStyle="bold"
             android:layout_gravity="center" />
 
+        <!-- Imagen de perfil -->
+        <ImageView
+            android:id="@+id/profileImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_profile"
+        android:contentDescription="@string/profile_image_description" />
+
+        <Button
+            android:id="@+id/changeImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_image"
+            android:layout_marginTop="8dp" />
+
         <!-- Datos Individuales -->
         <TextView
             android:layout_width="match_parent"
@@ -30,25 +46,59 @@
             android:textStyle="bold"
             android:layout_marginTop="16dp" />
 
+        <!-- EditText para los nombres -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nacionalidad"
+            android:hint="@string/nombres"
             android:layout_marginTop="8dp">
 
-            <Spinner
-                android:id="@+id/nacionalidadSpinner"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nombres"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:paddingVertical="8dp"
-                android:background="@android:drawable/editbox_background"
-                android:entries="@array/nacionalidades"
-                android:prompt="@string/nacionalidad" />
+                android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Aquí puedes agregar el resto de los elementos que estaban antes en el código -->
+        <!-- EditText para el apellido -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/apellido"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/apellidoEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Spinner para la nacionalidad  -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nacionalidad"
+            android:labelFor="@+id/nacionalidadSpinner"
+        android:layout_marginTop="8dp" />
+
+        <Spinner
+            android:id="@+id/nacionalidadSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:paddingVertical="8dp"
+            android:background="@android:drawable/editbox_background"
+            android:entries="@array/nacionalidades"
+            android:prompt="@string/nacionalidad"
+            android:layout_marginTop="4dp" />
+
+        <Button
+            android:id="@+id/guardarCambiosButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guardar_cambios"
+            android:layout_marginTop="24dp"/>
 
     </LinearLayout>
-
 </ScrollView>

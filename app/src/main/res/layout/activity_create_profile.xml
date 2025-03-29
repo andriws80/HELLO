@@ -1,54 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        tools:ignore="ExtraText">
+        android:padding="16dp">
 
+        <!-- Título -->
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/create_profile_title"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/create_profile_title"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:layout_gravity="center" />
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
 
-        <!-- Datos Individuales -->
+        <!-- Sección: Datos Individuales -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/section_individual"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nombresTextInputLayout"
+        <!-- Imagen de Perfil -->
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/nombres"
-            android:layout_marginTop="8dp">
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/profileImageView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_profile"
+                android:contentDescription="@string/profile_image_description" />
+
+            <Button
+                android:id="@+id/changeImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_image"
+                android:layout_gravity="bottom|center_horizontal" />
+        </FrameLayout>
+
+        <!-- Nombres -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_hint"
+            android:layout_marginBottom="16dp">
+
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nombresEditText"
+                android:id="@+id/nombres"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Apellido -->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/apellidoTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/apellido"
-            android:layout_marginTop="8dp">
+            android:hint="@string/lastname_hint"
+            android:layout_marginBottom="16dp">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/apellidoEditText"
                 android:layout_width="match_parent"
@@ -56,106 +83,226 @@
                 android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Nacionalidad (Spinner) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nacionalidad"
+            android:labelFor="@+id/nacionalidadSpinner"
+            android:layout_marginBottom="8dp" />
+
         <Spinner
             android:id="@+id/nacionalidadSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:entries="@array/nacionalidades"
-            android:prompt="@string/nacionalidad" />
-        <!--  He eliminado razaSpinner y edadSpinner porque no se usan  -->
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
 
+        <!-- Sección: Datos de la Pareja -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/personalidad"
-            android:layout_marginTop="8dp" />
-        <LinearLayout
-            android:id="@+id/personalidadCheckBoxes"
+            android:text="@string/section_pareja"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Nombres (Pareja) -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Checkboxes for personalidad will be added dynamically -->
-        </LinearLayout>
+            android:hint="@string/nombres_pareja"
+            android:layout_marginBottom="16dp">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nombresParejaEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Apellido (Pareja) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/apellido_pareja"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/apellidoParejaEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Nacionalidad (Pareja) - Spinner -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nivel_academico"
-            android:layout_marginTop="8dp" />
-        <LinearLayout
-            android:id="@+id/nivelAcademicoCheckBoxes"
+            android:text="@string/nacionalidad_pareja"
+            android:labelFor="@+id/nacionalidadParejaSpinner"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/nacionalidadParejaSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Checkboxes for nivel academico will be added dynamically -->
-        </LinearLayout>
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/tipo_personalidad"
-            android:layout_marginTop="8dp" />
-        <LinearLayout
-            android:id="@+id/tipoPersonalidadCheckBoxes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <!-- Checkboxes for tipo de personalidad will be added dynamically -->
-        </LinearLayout>
-
-        <!-- He eliminado la sección "Datos de la Pareja" -->
-
-        <!-- Datos en Conjunto (Modificado para usar paisResidenciaSpinner) -->
+        <!-- Sección: Datos en Conjunto -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/section_conjunto"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- País/Ciudad de Residencia (AutoCompleteTextView) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/pais_ciudad_residencia"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_marginBottom="16dp">
+
+            <AutoCompleteTextView
+                android:id="@+id/paisCiudadResidenciaAutoCompleteTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Tipo de Relación (Spinner) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tipo_relacion"
+            android:labelFor="@+id/tipoRelacionSpinner"
+            android:layout_marginBottom="8dp" />
 
         <Spinner
-            android:id="@+id/paisResidenciaSpinner"
+            android:id="@+id/tipoRelacionSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:entries="@array/paises_ciudades"
-        android:prompt="@string/pais_ciudad_residencia" />  <!--  Y este string -->
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Hijos (Spinner) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hijos"
+            android:labelFor="@+id/hijosSpinner"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/hijosSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Mascotas (Checkbox Group - Ejemplo) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/mascotas"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <CheckBox
+                android:id="@+id/perrosCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mascotas_opcion_1"
+                android:layout_marginEnd="16dp" />
+
+            <CheckBox
+                android:id="@+id/gatosCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mascotas_opcion_2" />
+            <!-- Agrega más CheckBoxes para otras mascotas si es necesario -->
+        </LinearLayout>
+
+        <!--  Repite el patrón TextView + control de entrada (Spinner, CheckBox, RadioGroup, etc.)
+              para los demás campos: religión, ideología política, consumo de alcohol/tabaco,
+              deportes, hobbies, dieta, género musical.  Usa los strings definidos en strings.xml.
+              Asegúrate de asignar IDs únicos a cada control de entrada.
+        -->
+        <!-- Ejemplos para "Religión" (RadioGroup) e "Hobbies" (CheckBoxes) -->
+
+        <!-- Religión (RadioGroup) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/religion"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/religionRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/catolicoRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/religion_opcion_1" />
+
+            <RadioButton
+                android:id="@+id/cristianoRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/religion_opcion_2" />
+            <!-- Agrega más RadioButtons para otras religiones -->
+        </RadioGroup>
+
+        <!-- Hobbies (CheckBoxes - Múltiples) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hobbies"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <CheckBox
+                android:id="@+id/lecturaCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hobbies_opcion_1" />
+
+            <CheckBox
+                android:id="@+id/viajarCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hobbies_opcion_2" />
+            <!-- Agrega más CheckBoxes para otros hobbies -->
+        </LinearLayout>
 
 
-        <!-- He eliminado el resto de los campos de "Datos en Conjunto" que no se usan -->
-
-        <ImageView
-            android:id="@+id/profileImageView"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="16dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_profile_placeholder"
-        android:contentDescription="@string/profile_image_description" />
-
+        <!-- Botón para Guardar/Siguiente -->
         <Button
-            android:id="@+id/selectImageButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/select_image"
-            android:layout_marginTop="8dp"/>
-
-        <Button
-            android:id="@+id/uploadImageButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/upload_image"
-            android:layout_marginTop="8dp"/>
-
-        <Button
-            android:id="@+id/guardarPerfilButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/save_profile"
-            android:layout_marginTop="16dp"/>
+            android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        android:layout_gravity="end" />
 
     </LinearLayout>
-
 </ScrollView>
