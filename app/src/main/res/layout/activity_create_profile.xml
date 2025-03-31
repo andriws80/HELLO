@@ -16,23 +16,164 @@
             android:id="@+id/create_profile_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="@string/create_profile_title"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:gravity="center"
             android:layout_marginBottom="16dp" />
 
-        <!-- Sección: Datos Individuales -->
+        <!-- Sección: Datos Individuales - Persona 1 -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/section_individual"
+            android:text="@string/section_individual_1"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp" />
 
-        <!-- Imagen de Perfil -->
+        <!-- Nombres (Persona 1) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_hint_1"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nombres"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Apellidos (Persona 1) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/lastname_hint_1"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/apellidoEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Nacionalidad (Persona 1) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nacionalidad_1"
+            android:labelFor="@+id/nacionalidadSpinner"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/nacionalidadSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Raza (Persona 1) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/raza_1"
+            android:labelFor="@+id/razaSpinner1"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/razaSpinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Sección: Datos Individuales - Persona 2 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/section_individual_2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Nombres (Persona 2) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/name_hint_2"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nombresParejaEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Apellidos (Persona 2) -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/lastname_hint_2"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/apellidoParejaEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Nacionalidad (Persona 2) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nacionalidad_2"
+            android:labelFor="@+id/nacionalidadParejaSpinner"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/nacionalidadParejaSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Raza (Persona 2) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/raza_2"
+            android:labelFor="@+id/razaSpinner2"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/razaSpinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Sección: Foto de Perfil (Compartida - 1 a 4 fotos) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/section_profile_photos"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_photos_description"
+            android:layout_marginBottom="16dp" />
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -44,139 +185,28 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_profile"
-                android:contentDescription="@string/profile_image_description" />
+                android:contentDescription="@string/profile_photos_description"
+                android:src="@drawable/ic_profile" />
 
             <Button
                 android:id="@+id/changeImageButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/select_image"
-                android:layout_gravity="bottom|center_horizontal" />
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="@string/add_photo" />
         </FrameLayout>
 
-        <!-- Nombres -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/name_hint"
-            android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nombres"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Apellido -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/lastname_hint"
-            android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/apellidoEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Nacionalidad (Spinner) -->
+        <!-- Sección: Datos Adicionales (En Común) -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nacionalidad"
-            android:labelFor="@+id/nacionalidadSpinner"
-            android:layout_marginBottom="8dp" />
-
-        <Spinner
-            android:id="@+id/nacionalidadSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Sección: Datos de la Pareja -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/section_pareja"
+            android:text="@string/section_adicional"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp" />
 
-        <!-- Nombres (Pareja) -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/nombres_pareja"
-            android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nombresParejaEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Apellido (Pareja) -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/apellido_pareja"
-            android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/apellidoParejaEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Nacionalidad (Pareja) - Spinner -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/nacionalidad_pareja"
-            android:labelFor="@+id/nacionalidadParejaSpinner"
-            android:layout_marginBottom="8dp" />
-
-        <Spinner
-            android:id="@+id/nacionalidadParejaSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:layout_marginBottom="16dp" />
-
-        <!-- Sección: Datos en Conjunto -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/section_conjunto"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp" />
-
-        <!-- País/Ciudad de Residencia (AutoCompleteTextView) -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/pais_ciudad_residencia"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_marginBottom="16dp">
-
-            <AutoCompleteTextView
-                android:id="@+id/paisCiudadResidenciaAutoCompleteTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="none" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Tipo de Relación (Spinner) -->
+        <!-- Tipo de Relación -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -191,11 +221,11 @@
             android:minHeight="48dp"
             android:layout_marginBottom="16dp" />
 
-        <!-- Hijos (Spinner) -->
+        <!-- Cantidad de Hijos -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hijos"
+            android:text="@string/cantidad_hijos"
             android:labelFor="@+id/hijosSpinner"
             android:layout_marginBottom="8dp" />
 
@@ -206,7 +236,7 @@
             android:minHeight="48dp"
             android:layout_marginBottom="16dp" />
 
-        <!-- Mascotas (Checkbox Group - Ejemplo) -->
+        <!-- Mascotas -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -216,59 +246,238 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
+            android:orientation="horizontal">
 
             <CheckBox
                 android:id="@+id/perrosCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mascotas_opcion_1"
+                android:text="@string/perro"
                 android:layout_marginEnd="16dp" />
 
             <CheckBox
                 android:id="@+id/gatosCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mascotas_opcion_2" />
-            <!-- Agrega más CheckBoxes para otras mascotas si es necesario -->
+                android:text="@string/gato"
+                android:layout_marginEnd="16dp"/>
+
+            <CheckBox
+                android:id="@+id/conejosCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Conejo(s)"
+                android:layout_marginEnd="16dp"/>
+
+            <CheckBox
+                android:id="@+id/hamstersCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hámster(s)"
+                android:layout_marginEnd="16dp"/>
+
+            <CheckBox
+                android:id="@+id/otrosCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Otro(s)" />
+
         </LinearLayout>
 
-        <!--  Repite el patrón TextView + control de entrada (Spinner, CheckBox, RadioGroup, etc.)
-              para los demás campos: religión, ideología política, consumo de alcohol/tabaco,
-              deportes, hobbies, dieta, género musical.  Usa los strings definidos en strings.xml.
-              Asegúrate de asignar IDs únicos a cada control de entrada.
-        -->
-        <!-- Ejemplos para "Religión" (RadioGroup) e "Hobbies" (CheckBoxes) -->
-
-        <!-- Religión (RadioGroup) -->
+        <!-- Religión -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/religion"
+            android:labelFor="@+id/religionRadioGroup"
             android:layout_marginBottom="8dp" />
 
         <RadioGroup
             android:id="@+id/religionRadioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical"
             android:layout_marginBottom="16dp">
 
             <RadioButton
-                android:id="@+id/catolicoRadioButton"
+                android:id="@+id/religionCatolicaRadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/religion_opcion_1" />
+                android:text="@string/religion_catolica" />
 
             <RadioButton
-                android:id="@+id/cristianoRadioButton"
+                android:id="@+id/religionCristianaRadioButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/religion_opcion_2" />
-            <!-- Agrega más RadioButtons para otras religiones -->
+                android:text="@string/religion_cristiana" />
+
+            <RadioButton
+                android:id="@+id/religionJudiaRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/religion_judia" />
+
+            <RadioButton
+                android:id="@+id/religionMusulmanaRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/religion_musulmana" />
+
+            <RadioButton
+                android:id="@+id/religionHinduRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/religion_hindu" />
+
+            <RadioButton
+                android:id="@+id/religionNingunaRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/religion_ninguna" />
+
         </RadioGroup>
 
-        <!-- Hobbies (CheckBoxes - Múltiples) -->
+        <!-- Ideología Política -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ideologia_politica"
+            android:labelFor="@+id/ideologiaPoliticaSpinner"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/ideologiaPoliticaSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Consumo de Alcohol -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/consumo_alcohol"
+            android:labelFor="@+id/consumoAlcoholRadioGroup"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/consumoAlcoholRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/consumoAlcoholSiRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/consumo_alcohol_si" />
+
+            <RadioButton
+                android:id="@+id/consumoAlcoholNoRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/consumo_alcohol_no" />
+
+            <RadioButton
+                android:id="@+id/consumoAlcoholAVecesRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/consumo_alcohol_a_veces" />
+
+        </RadioGroup>
+
+        <!-- Consumo de Tabaco -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/consumo_tabaco"
+            android:labelFor="@+id/consumoTabacoRadioGroup"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/consumoTabacoRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp">
+
+            <RadioButton
+                android:id="@+id/consumoTabacoSiRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/consumo_tabaco_si" />
+
+            <RadioButton
+                android:id="@+id/consumoTabacoNoRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/consumo_tabaco_no" />
+
+            <RadioButton
+                android:id="@+id/consumoTabacoAVecesRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/consumo_tabaco_a_veces" />
+
+        </RadioGroup>
+
+        <!-- Deportes -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/deportes"
+            android:layout_marginBottom="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/futbolCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/futbol"
+                android:layout_marginEnd="16dp" />
+
+            <CheckBox
+                android:id="@+id/baloncestoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/baloncesto"
+                android:layout_marginEnd="16dp" />
+
+            <CheckBox
+                android:id="@+id/natacionCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/natacion"
+                android:layout_marginEnd="16dp" />
+
+            <CheckBox
+                android:id="@+id/ciclismoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ciclismo"
+                android:layout_marginEnd="16dp" />
+
+            <CheckBox
+                android:id="@+id/tenisCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tenis"
+                android:layout_marginEnd="16dp" />
+
+            <CheckBox
+                android:id="@+id/otrosDeportesCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Otro(s)" />
+
+        </LinearLayout>
+
+        <!-- Hobbies -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -278,31 +487,88 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="16dp">
+            android:orientation="horizontal">
 
             <CheckBox
                 android:id="@+id/lecturaCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hobbies_opcion_1" />
+                android:text="@string/lectura"
+                android:layout_marginEnd="16dp" />
 
             <CheckBox
-                android:id="@+id/viajarCheckBox"
+                android:id="@+id/viajesCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hobbies_opcion_2" />
-            <!-- Agrega más CheckBoxes para otros hobbies -->
+                android:text="@string/viajes"
+                android:layout_marginEnd="16dp" />
+
+            <CheckBox
+                android:id="@+id/cocinaCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cocina"
+                android:layout_marginEnd="16dp" />
+
+            <CheckBox
+                android:id="@+id/jardineriaCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jardinería"
+                android:layout_marginEnd="16dp" />
+
+            <CheckBox
+                android:id="@+id/manualidadesCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manualidades"
+                android:layout_marginEnd="16dp" />
+
+            <CheckBox
+                android:id="@+id/otrosHobbiesCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Otro(s)" />
+
         </LinearLayout>
 
+        <!-- Dieta -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dieta"
+            android:labelFor="@+id/dietaSpinner"
+            android:layout_marginBottom="8dp" />
 
-        <!-- Botón para Guardar/Siguiente -->
+        <Spinner
+            android:id="@+id/dietaSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Género Musical -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/genero_musical"
+            android:labelFor="@+id/generoMusicalSpinner"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/generoMusicalSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="32dp" />  <!-- Mayor margen inferior para el botón. -->
+
+        <!-- Botón: Siguiente -->
         <Button
             android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/next"
-        android:layout_gravity="end" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next_button_label"
+            android:layout_gravity="end"  />  <!-- Alineado a la derecha. -->
 
     </LinearLayout>
 </ScrollView>

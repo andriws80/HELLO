@@ -1,68 +1,50 @@
 <resources>
-    <!-- Strings generales -->
-    <string name="app_name">Hello App</string>
-    <string name="next">Siguiente</string>
-    <string name="previous">Anterior</string>
-    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
-
-    <!-- Fragment Labels -->
-    <string name="first_fragment_label">Primer Fragmento</string>
-    <string name="second_fragment_label">Segundo Fragmento</string>
-
-    <!-- Pantalla de Login -->
-    <string name="login_title">Iniciar Sesión</string>
-    <string name="email_hint">Correo Electrónico</string>
-    <string name="password_hint">Contraseña</string>
-    <string name="login_button">Ingresar</string>
-    <string name="google_signin_button">Iniciar con Google</string>
-    <string name="dont_have_account">¿No tienes cuenta?</string>
-
-    <!-- Pantalla de Bienvenida -->
-    <string name="welcome_text">¡Bienvenidos a nuestra app!</string>
-    <string name="edit_profile">Editar Perfil</string>
-    <string name="logout">Cerrar Sesión</string>
-
-    <!-- Pantalla de Registro/Perfil -->
-    <string name="edit_profile_title">Editar Perfil</string>
+    <string name="app_name">HELLO</string>
     <string name="create_profile_title">Crear Perfil</string>
-    <string name="section_individual">Datos Individuales</string>
-    <string name="name_hint">Nombres</string>
-    <string name="lastname_hint">Apellido</string>
-    <string name="section_pareja">Datos de la Pareja</string>
-    <string name="section_conjunto">Datos en Conjunto</string>
 
-    <!-- Imagen de Perfil -->
-    <string name="profile_image_description">Imagen de perfil</string>
-    <string name="select_image">Seleccionar Imagen</string>
-    <string name="upload_image">Subir Imagen</string>
-    <string name="change_image">Cambiar Imagen</string>
+    <!-- Sección: Datos de la Aplicación (Información General) -->
+    <string name="section_app_data">Datos de la Aplicación</string>
+    <string name="app_description">Información general de la aplicación o cualquier instrucción importante.</string>
+    <string name="accept_terms">Aceptar términos y condiciones</string>
+    <string name="next">Siguiente</string>
 
-    <!-- Datos Personales -->
-    <string name="nombres">Nombres</string>
-    <string name="apellido">Apellido</string>
-    <string name="nacionalidad">Nacionalidad</string>
-    <string name="raza">Raza</string>
-    <string name="edad">Edad</string>
-    <string name="personalidad">Personalidad</string>
-    <string name="nivel_academico">Nivel Académico</string>
-    <string name="tipo_personalidad">Tipo de Personalidad</string>
-    <string name="email_hint2">Correo Electrónico</string>
-    <string name="password_hint2">Contraseña</string>
+    <!-- ************************************************************************************** -->
+    <!-- *****************************  FORMULARIO INDIVIDUAL  ******************************* -->
+    <!-- ************************************************************************************** -->
 
-    <!-- Datos de la Pareja -->
-    <string name="nombres_pareja">Nombres (Pareja)</string>
-    <string name="apellido_pareja">Apellido (Pareja)</string>
-    <string name="nacionalidad_pareja">Nacionalidad (Pareja)</string>
-    <string name="raza_pareja">Raza (Pareja)</string>
-    <string name="edad_pareja">Edad (Pareja)</string>
-    <string name="personalidad_pareja">Personalidad (Pareja)</string>
-    <string name="nivel_academico_pareja">Nivel Académico (Pareja)</string>
-    <string name="tipo_personalidad_pareja">Tipo de Personalidad (Pareja)</string>
+    <!-- Sección: Datos Individuales (Persona 1) -->
+    <string name="section_individual_1">Datos Individuales - Persona 1</string>
+    <string name="name_hint_1">Nombres (Persona 1)</string>
+    <string name="lastname_hint_1">Apellidos (Persona 1)</string>
+    <string name="edad_1">Edad (Persona 1)</string>
+    <string name="nacionalidad_1">Nacionalidad (Persona 1)</string>
+    <string name="raza_1">Raza (Persona 1)</string>
+    <string name="personalidad_1">Personalidad (Persona 1)</string>
+    <string name="nivel_academico_1">Nivel Académico (Persona 1)</string>
 
-    <!-- Datos en Conjunto -->
-    <string name="pais_ciudad_residencia">País/Ciudad de Residencia</string>
+    <!-- Sección: Datos Individuales (Persona 2) -->
+    <string name="section_individual_2">Datos Individuales - Persona 2</string>
+    <string name="name_hint_2">Nombres (Persona 2)</string>
+    <string name="lastname_hint_2">Apellidos (Persona 2)</string>
+    <string name="edad_2">Edad (Persona 2)</string>
+    <string name="nacionalidad_2">Nacionalidad (Persona 2)</string>
+    <string name="raza_2">Raza (Persona 2)</string>
+    <string name="personalidad_2">Personalidad (Persona 2)</string>
+    <string name="nivel_academico_2">Nivel Académico (Persona 2)</string>
+
+    <!-- ************************************************************************************** -->
+    <!-- *****************************  FORMULARIO EN PAREJA  ********************************* -->
+    <!-- ************************************************************************************** -->
+
+    <!-- Sección: Foto de Perfil (Compartida - 1 a 4 fotos) -->
+    <string name="section_profile_photos">Fotos de Perfil (1-4 fotos)</string>
+    <string name="profile_photos_description">Selecciona de 1 a 4 fotos grupales</string>
+    <string name="add_photo">Agregar Foto</string>
+
+    <!-- Sección: Datos Adicionales (En Común) -->
+    <string name="section_adicional">Datos Adicionales (En Común)</string>
     <string name="tipo_relacion">Tipo de Relación</string>
-    <string name="hijos">Hijos</string>
+    <string name="cantidad_hijos">Cantidad de Hijos</string>
     <string name="mascotas">Mascotas</string>
     <string name="religion">Religión</string>
     <string name="ideologia_politica">Ideología Política</string>
@@ -73,121 +55,461 @@
     <string name="dieta">Dieta</string>
     <string name="genero_musical">Género Musical</string>
 
-    <!-- Opciones para Spinners (ejemplos, debes completarlos) -->
+    <!-- ************************************************************************************** -->
+    <!-- **************************  FORMULARIO DE PREFERENCIAS  ****************************** -->
+    <!-- ************************************************************************************** -->
+
+    <!-- Sección: Preferencias de Pareja -->
+    <string name="section_preferencias_pareja">Preferencias de Pareja</string>
+    <string name="rango_edad_pareja">Rango de Edad de Pareja</string>
+    <string name="nivel_academico_pareja">Nivel Académico de Pareja</string>
+    <string name="pais_ciudad_pareja">País/Ciudad de Pareja</string>
+    <string name="tipo_relacion_pareja">Tipo de Relación de Pareja</string>
+    <string name="cantidad_hijos_pareja">Cantidad de Hijos de Pareja</string>
+    <string name="mascotas_pareja">Mascotas de Pareja</string>
+    <string name="religion_pareja">Religión de Pareja</string>
+    <string name="ideologia_politica_pareja">Ideología Política de Pareja</string>
+    <string name="consumo_alcohol_pareja">Consumo de Alcohol de Pareja</string>
+    <string name="consumo_tabaco_pareja">Consumo de Tabaco de Pareja</string>
+    <string name="genero_musical_pareja">Género Musical de Pareja</string>
+    <string name="deportes_preferencial">Deportes (Preferencial)</string>
+    <string name="hobbies_preferencial">Hobbies (Preferencial)</string>
+
+    <!-- ************************************************************************************** -->
+    <!-- ***********************************  ARRAYS  **************************************** -->
+    <!-- ************************************************************************************** -->
+
+    <!-- Nacionalidades (países y ciudades) -->
     <string-array name="nacionalidades">
         <item>Seleccionar</item>
-        <item>Argentina</item>
-        <item>Bolivia</item>
-        <!-- ... más nacionalidades ... -->
+        <item>Argentina - Buenos Aires</item>
+        <item>Argentina - Córdoba</item>
+        <item>Argentina - Rosario</item>
+        <item>Bolivia - La Paz</item>
+        <item>Bolivia - Cochabamba</item>
+        <item>Bolivia - Santa Cruz</item>
+        <item>Brasil - São Paulo</item>
+        <item>Brasil - Río de Janeiro</item>
+        <item>Brasil - Brasilia</item>
+        <item>Chile - Santiago</item>
+        <item>Chile - Valparaíso</item>
+        <item>Chile - Concepción</item>
+        <item>Colombia - Bogotá</item>
+        <item>Colombia - Medellín</item>
+        <item>Colombia - Cali</item>
+        <item>Costa Rica - San José</item>
+        <item>Costa Rica - Alajuela</item>
+        <item>Costa Rica - Cartago</item>
+        <item>Cuba - La Habana</item>
+        <item>Cuba - Santiago de Cuba</item>
+        <item>Cuba - Camagüey</item>
+        <item>Ecuador - Quito</item>
+        <item>Ecuador - Guayaquil</item>
+        <item>Ecuador - Cuenca</item>
+        <item>El Salvador - San Salvador</item>
+        <item>El Salvador - Santa Ana</item>
+        <item>El Salvador - San Miguel</item>
+        <item>España - Madrid</item>
+        <item>España - Barcelona</item>
+        <item>España - Valencia</item>
+        <item>Estados Unidos - Nueva York</item>
+        <item>Estados Unidos - Los Ángeles</item>
+        <item>Estados Unidos - Chicago</item>
+        <item>Guatemala - Ciudad de Guatemala</item>
+        <item>Guatemala - Quetzaltenango</item>
+        <item>Guatemala - Escuintla</item>
+        <item>Honduras - Tegucigalpa</item>
+        <item>Honduras - San Pedro Sula</item>
+        <item>Honduras - La Ceiba</item>
+        <item>México - CDMX</item>
+        <item>México - Monterrey</item>
+        <item>México - Guadalajara</item>
+        <item>Nicaragua - Managua</item>
+        <item>Nicaragua - León</item>
+        <item>Nicaragua - Granada</item>
+        <item>Panamá - Ciudad de Panamá</item>
+        <item>Panamá - Colón</item>
+        <item>Panamá - David</item>
+        <item>Paraguay - Asunción</item>
+        <item>Paraguay - Ciudad del Este</item>
+        <item>Paraguay - Encarnación</item>
+        <item>Perú - Lima</item>
+        <item>Perú - Arequipa</item>
+        <item>Perú - Cusco</item>
+        <item>Puerto Rico - San Juan</item>
+        <item>Puerto Rico - Ponce</item>
+        <item>Puerto Rico - Bayamón</item>
+        <item>República Dominicana - Santo Domingo</item>
+        <item>República Dominicana - Santiago</item>
+        <item>República Dominicana - La Romana</item>
+        <item>Uruguay - Montevideo</item>
+        <item>Uruguay - Punta del Este</item>
+        <item>Uruguay - Salto</item>
+        <item>Venezuela - Caracas</item>
+        <item>Venezuela - Maracaibo</item>
+        <item>Venezuela - Valencia</item>
     </string-array>
 
+    <!-- Razas -->
     <string-array name="razas">
         <item>Seleccionar</item>
-        <item>Mestizo</item>
-        <item>Blanco</item>
-        <item>Afrodescendiente</item>
+        <item>Blanca</item>
+        <item>Negra</item>
+        <item>Mestiza</item>
+        <item>Asiática</item>
         <item>Indígena</item>
-        <!-- ... más razas ... -->
+        <item>Árabe</item>
     </string-array>
 
+    <!-- Edades -->
     <string-array name="edades">
         <item>Seleccionar</item>
-        <item>18-25</item>
-        <item>26-35</item>
-        <item>36-45</item>
-        <item>46-55</item>
-        <item>56+</item>
+        <!-- Generar de 18 a 70 -->
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+        <item>32</item>
+        <item>33</item>
+        <item>34</item>
+        <item>35</item>
+        <item>36</item>
+        <item>37</item>
+        <item>38</item>
+        <item>39</item>
+        <item>40</item>
+        <item>41</item>
+        <item>42</item>
+        <item>43</item>
+        <item>44</item>
+        <item>45</item>
+        <item>46</item>
+        <item>47</item>
+        <item>48</item>
+        <item>49</item>
+        <item>50</item>
+        <item>51</item>
+        <item>52</item>
+        <item>53</item>
+        <item>54</item>
+        <item>55</item>
+        <item>56</item>
+        <item>57</item>
+        <item>58</item>
+        <item>59</item>
+        <item>60</item>
+        <item>61</item>
+        <item>62</item>
+        <item>63</item>
+        <item>64</item>
+        <item>65</item>
+        <item>66</item>
+        <item>67</item>
+        <item>68</item>
+        <item>69</item>
+        <item>70</item>
     </string-array>
 
-    <string-array name="paises_ciudades">
-        <item>Seleccionar</item>
-        <item>La Paz</item>
-        <item>Cochabamba</item>
-        <item>Santa Cruz</item>
-        <!-- ... más ciudades ... -->
+    <!-- Personalidad (Checkbox) -->
+    <string-array name="personalidades">
+        <item>Extrovertido</item>
+        <item>Introvertido</item>
+        <item>Aventurero</item>
+        <item>Creativo</item>
+        <item>Analítico</item>
+        <item>Emocional</item>
+        <item>Racional</item>
+        <item>Perfeccionista</item>
+        <item>Soñador</item>
+        <item>Pragmatico</item>
+        <item>Carismático</item>
+        <item>Reflexivo</item>
     </string-array>
 
+    <!-- Nivel Académico (Checkbox) -->
+    <string-array name="niveles_academicos">
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Técnico</item>
+        <item>Tecnólogo</item>
+        <item>Universitario</item>
+        <item>Posgrado</item>
+        <item>Doctorado</item>
+        <item>Posdoctorado</item>
+        <item>Todas las anteriores</item>
+    </string-array>
+
+    <!-- Tipo de Relación -->
     <string-array name="tipos_relacion">
         <item>Seleccionar</item>
-        <item>Casado(a)</item>
-        <item>Unión Libre</item>
-        <item>Noviazgo</item>
-        <item>Relación Abierta</item>
-        <!-- ... otros tipos ... -->
+        <item>Casado</item>
+        <item>Unión libre</item>
     </string-array>
 
+    <!-- Cantidad de Hijos -->
     <string-array name="cantidades_hijos">
         <item>Seleccionar</item>
         <item>0</item>
         <item>1</item>
         <item>2</item>
-        <item>3+</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5 o más</item>
     </string-array>
 
+    <!-- Mascotas -->
+    <string-array name="mascotas">
+        <item>Perro</item>
+        <item>Gato</item>
+        <item>Ave</item>
+        <item>Reptil</item>
+        <item>Peces</item>
+        <item>Ninguna</item>
+    </string-array>
+
+    <!-- Religión (máximo 2 selecciones) -->
+    <string-array name="religiones">
+        <item>Cristiana</item>
+        <item>Católica</item>
+        <item>Judía</item>
+        <item>Musulmana</item>
+        <item>Hindú</item>
+        <item>Ninguna</item>
+    </string-array>
+
+    <!-- Ideología Política -->
+    <string-array name="ideologias_politicas">
+        <item>Seleccionar</item>
+        <item>Derecha</item>
+        <item>Izquierda</item>
+        <item>Ninguna</item>
+    </string-array>
+
+    <!-- Consumo de Alcohol -->
+    <string-array name="consumos_alcohol">
+        <item>Seleccionar</item>
+        <item>Sí</item>
+        <item>No</item>
+        <item>A veces</item>
+    </string-array>
+
+    <!-- Consumo de Tabaco -->
+    <string-array name="consumos_tabaco">
+        <item>Seleccionar</item>
+        <item>Sí</item>
+        <item>No</item>
+        <item>A veces</item>
+    </string-array>
+
+    <!-- Deportes (Checkbox) -->
+    <string-array name="deportes">
+        <item>Fútbol</item>
+        <item>Baloncesto</item>
+        <item>Natación</item>
+        <item>Gimnasio</item>
+        <item>Yoga</item>
+        <item>Ciclismo</item>
+        <item>Tenis</item>
+        <item>Atletismo</item>
+        <item>Voleibol</item>
+        <item>Artes marciales</item>
+        <item>Senderismo</item>
+        <item>Esquí</item>
+        <item>Patinaje</item>
+    </string-array>
+
+    <!-- Hobbies (Checkbox) -->
+    <string-array name="hobbies">
+        <item>Lectura</item>
+        <item>Viajes</item>
+        <item>Cocina</item>
+        <item>Películas</item>
+        <item>Videojuegos</item>
+        <item>Arte</item>
+        <item>Fotografía</item>
+        <item>Naturaleza</item>
+        <item>Escritura</item>
+        <item>Jardinería</item>
+        <item>Manualidades</item>
+    </string-array>
+
+    <!-- Dieta -->
     <string-array name="dietas">
         <item>Seleccionar</item>
-        <item>Omnívoro</item>
-        <item>Vegetariano</item>
-        <item>Vegano</item>
-        <!-- ... otras dietas ... -->
+        <item>Vegetariana</item>
+        <item>Vegana</item>
+        <item>Omnívora</item>
+        <item>Ninguna</item>
     </string-array>
 
-    <!-- Strings para CheckBoxes y RadioButtons (ejemplos) -->
-    <string name="personalidad_opcion_1">Amable</string>
-    <string name="personalidad_opcion_2">Extrovertido</string>
-    <!-- ... más opciones de personalidad ... -->
+    <!-- Género Musical (Checkbox) -->
+    <string-array name="generos_musicales">
+        <item>Pop</item>
+        <item>Rock</item>
+        <item>Jazz</item>
+        <item>Reggaetón</item>
+        <item>Clásica</item>
+        <item>Electrónica</item>
+        <item>Hip-Hop</item>
+        <item>Salsa</item>
+        <item>Cumbia</item>
+        <item>Tango</item>
+        <item>Metal</item>
+    </string-array>
 
-    <string name="nivel_academico_opcion_1">Primaria</string>
-    <string name="nivel_academico_opcion_2">Secundaria</string>
-    <!-- ... más opciones de nivel académico ... -->
+    <!-- Rangos de edad de pareja -->
+    <string-array name="rangos_edad_pareja">
+        <item>Seleccionar</item>
+        <item>18 a 24 años</item>
+        <item>25 a 29 años</item>
+        <item>30 a 39 años</item>
+        <item>40 a 49 años</item>
+        <item>50 a 59 años</item>
+        <item>60 a 69 años</item>
+        <item>Todas las anteriores</item>
+    </string-array>
 
-    <string name="tipo_personalidad_opcion_1">Introvertido</string>
-    <string name="tipo_personalidad_opcion_2">Extrovertido</string>
-    <!-- ... más opciones de tipo de personalidad ... -->
+    <!-- Nivel Académico de Pareja (Preferencias) -->
+    <string-array name="niveles_academicos_pareja">
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Técnico</item>
+        <item>Tecnólogo</item>
+        <item>Universitario</item>
+        <item>Posgrado</item>
+        <item>Doctorado</item>
+        <item>Posdoctorado</item>
+        <item>Todas las anteriores</item>
+    </string-array>
 
-    <string name="mascotas_opcion_1">Perro</string>
-    <string name="mascotas_opcion_2">Gato</string>
-    <!-- ... más opciones de mascotas ... -->
+    <!-- Tipo de Relación de Pareja (Preferencias) -->
+    <string-array name="tipos_relacion_pareja">
+        <item>Casado</item>
+        <item>Unión libre</item>
+        <item>Todas las anteriores</item>
+    </string-array>
 
-    <string name="religion_opcion_1">Católico</string>
-    <string name="religion_opcion_2">Cristiano</string>
-    <!-- ... más opciones de religión ... -->
+    <!-- Cantidad de Hijos de Pareja (Preferencias) -->
+    <string-array name="cantidades_hijos_pareja">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5 o más</item>
+        <item>Todas las anteriores</item>
+    </string-array>
 
-    <string name="ideologia_politica_opcion_1">Izquierda</string>
-    <string name="ideologia_politica_opcion_2">Derecha</string>
-    <string name="ideologia_politica_opcion_3">Centro</string>
-    <!-- ... más opciones de ideología política ... -->
+    <!-- Mascotas de Pareja (Preferencial) -->
+    <string-array name="mascotas_pareja">
+        <item>Perro</item>
+        <item>Gato</item>
+        <item>Ave</item>
+        <item>Reptil</item>
+        <item>Peces</item>
+        <item>Ninguna</item>
+        <item>Todas las anteriores</item>
+    </string-array>
 
-    <string name="consumo_alcohol_opcion_1">Nunca</string>
-    <string name="consumo_alcohol_opcion_2">Socialmente</string>
-    <string name="consumo_alcohol_opcion_3">Regularmente</string>
+    <!-- Religión de Pareja (Preferencias) -->
+    <string-array name="religiones_pareja">
+        <item>Cristiana</item>
+        <item>Católica</item>
+        <item>Judía</item>
+        <item>Musulmana</item>
+        <item>Hindú</item>
+        <item>Ninguna</item>
+        <item>Todas las anteriores</item>
+    </string-array>
 
-    <string name="consumo_tabaco_opcion_1">Nunca</string>
-    <string name="consumo_tabaco_opcion_2">Ocasionalmente</string>
-    <string name="consumo_tabaco_opcion_3">Diariamente</string>
+    <!-- Ideología Política de Pareja (Preferencias) -->
+    <string-array name="ideologias_politicas_pareja">
+        <item>Derecha</item>
+        <item>Izquierda</item>
+        <item>Ninguna</item>
+        <item>Todas las anteriores</item>
+    </string-array>
 
-    <string name="deportes_opcion_1">Fútbol</string>
-    <string name="deportes_opcion_2">Baloncesto</string>
-    <!-- ... más opciones de deportes ... -->
+    <!-- Consumo de Alcohol de Pareja (Preferencias) -->
+    <string-array name="consumos_alcohol_pareja">
+        <item>Sí</item>
+        <item>No</item>
+        <item>A veces</item>
+    </string-array>
 
-    <string name="hobbies_opcion_1">Lectura</string>
-    <string name="hobbies_opcion_2">Viajar</string>
-    <!-- ... más opciones de hobbies ... -->
+    <!-- Consumo de Tabaco de Pareja (Preferencias) -->
+    <string-array name="consumos_tabaco_pareja">
+        <item>Sí</item>
+        <item>No</item>
+        <item>A veces</item>
+    </string-array>
 
-    <string name="genero_musical_opcion_1">Rock</string>
-    <string name="genero_musical_opcion_2">Pop</string>
-    <!-- ... más opciones de género musical ... -->
+    <!-- Dieta de Pareja (Preferencias) -->
+    <string-array name="dietas_pareja">
+        <item>Vegetariana</item>
+        <item>Vegana</item>
+        <item>Omnívora</item>
+        <item>Ninguna</item>
+    </string-array>
 
-    <!-- Guardar Cambios -->
-    <string name="guardar_cambios">Guardar cambios</string>
-    <string name="save_profile">Guardar Perfil</string>
+    <!-- Género Musical de Pareja (Preferencias) -->
+    <string-array name="generos_musicales_pareja">
+        <item>Pop</item>
+        <item>Rock</item>
+        <item>Jazz</item>
+        <item>Reggaetón</item>
+        <item>Clásica</item>
+        <item>Electrónica</item>
+        <item>Hip-Hop</item>
+        <item>Salsa</item>
+        <item>Cumbia</item>
+        <item>Tango</item>
+        <item>Metal</item>
+        <item>Todas las anteriores</item>
+    </string-array>
 
-    <!-- Notificaciones -->
-    <string name="default_notification_channel_id">canal_notificaciones_default</string>
+    <!-- Deportes (Preferencial) -->
+    <string-array name="deportes_preferencial">
+        <item>Fútbol</item>
+        <item>Baloncesto</item>
+        <item>Natación</item>
+        <item>Gimnasio</item>
+        <item>Yoga</item>
+        <item>Ciclismo</item>
+        <item>Tenis</item>
+        <item>Atletismo</item>
+        <item>Voleibol</item>
+        <item>Artes marciales</item>
+        <item>Senderismo</item>
+        <item>Esquí</item>
+        <item>Patinaje</item>
+        <item>Todas las anteriores</item>
+    </string-array>
 
-    <!-- Menú de configuración -->
-    <string name="action_settings">Configuración</string>
-    <string name="guardar_registro">Guardar Registro</string>
-    <string name="pais_ciudad_pareja_hint">País/Ciudad de Residencia (Pareja)</string>  <!-- Hint añadido -->
+    <!-- Hobbies (Preferencial) -->
+    <string-array name="hobbies_preferencial">
+        <item>Lectura</item>
+        <item>Viajes</item>
+        <item>Cocina</item>
+        <item>Películas</item>
+        <item>Videojuegos</item>
+        <item>Arte</item>
+        <item>Fotografía</item>
+        <item>Naturaleza</item>
+        <item>Escritura</item>
+        <item>Jardinería</item>
+        <item>Manualidades</item>
+        <item>Todas las anteriores</item>
+    </string-array>
 
 </resources>
