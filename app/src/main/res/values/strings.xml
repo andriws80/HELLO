@@ -13,6 +13,7 @@
     <!-- ************************************************************************************** -->
 
     <!-- Sección: Datos Individuales (Persona 1) -->
+    <string name="create_profile_title">Crea tu Perfil</string>  <!-- O el texto que desees para el título -->
     <string name="section_individual_1">Datos Individuales - Persona 1</string>
     <string name="name_hint_1">Nombres (Persona 1)</string>
     <string name="lastname_hint_1">Apellidos (Persona 1)</string>
@@ -46,14 +47,46 @@
     <string name="tipo_relacion">Tipo de Relación</string>
     <string name="cantidad_hijos">Cantidad de Hijos</string>
     <string name="mascotas">Mascotas</string>
+    <string name="perros">Perro(s)</string>
+    <string name="gatos">Gato(s)</string>
+    <string name="conejos">Conejo(s)</string>
+    <string name="hamsters">Hámster(s)</string>
+    <string name="otros_mascotas">Otros</string>
     <string name="religion">Religión</string>
+    <string name="religion_catolica">Católica</string>
+    <string name="religion_cristiana">Cristiana</string>
+    <string name="religion_judia">Judía</string>
+    <string name="religion_musulmana">Musulmana</string>
+    <string name="religion_hindu">Hindú</string>
+    <string name="religion_ninguna">Ninguna</string>
     <string name="ideologia_politica">Ideología Política</string>
     <string name="consumo_alcohol">Consumo de Alcohol</string>
+    <string name="consumo_alcohol_si">Sí</string>
+    <string name="consumo_alcohol_no">No</string>
+    <string name="consumo_alcohol_a_veces">A veces</string>
     <string name="consumo_tabaco">Consumo de Tabaco</string>
+    <string name="consumo_tabaco_si">Sí</string>
+    <string name="consumo_tabaco_no">No</string>
+    <string name="consumo_tabaco_a_veces">A veces</string>
     <string name="deportes">Deportes</string>
+    <string name="futbol">Fútbol</string>
+    <string name="baloncesto">Baloncesto</string>
+    <string name="natacion">Natación</string>
+    <string name="ciclismo">Ciclismo</string>
+    <string name="tenis">Tenis</string>
     <string name="hobbies">Hobbies</string>
+    <string name="lectura">Lectura</string>
+    <string name="viajes">Viajes</string>
     <string name="dieta">Dieta</string>
     <string name="genero_musical">Género Musical</string>
+    <string name="pop">Pop</string>
+    <string name="rock">Rock</string>
+    <string name="next_button_label">Siguiente</string>
+    <string name="otros_deportes">Otros Deportes</string>
+    <string name="cocina">Cocina</string>
+    <string name="jardineria">Jardinería</string>
+    <string name="manualidades">Manualidades</string>
+    <string name="otros_hobbies">Otros Hobbies</string>
 
     <!-- ************************************************************************************** -->
     <!-- **************************  FORMULARIO DE PREFERENCIAS  ****************************** -->
@@ -78,7 +111,7 @@
     <!-- ************************************************************************************** -->
     <!-- ***********************************  ARRAYS  **************************************** -->
     <!-- ************************************************************************************** -->
-
+    <string name="pais_ciudad_residencia">País/Ciudad de Residencia</string>
     <!-- Nacionalidades (países y ciudades) -->
     <string-array name="nacionalidades">
         <item>Seleccionar</item>
@@ -311,36 +344,26 @@
         <item>A veces</item>
     </string-array>
 
-    <!-- Deportes (Checkbox) -->
+    <!-- Deportes -->
     <string-array name="deportes">
+        <item>Seleccionar</item>
         <item>Fútbol</item>
         <item>Baloncesto</item>
         <item>Natación</item>
-        <item>Gimnasio</item>
-        <item>Yoga</item>
         <item>Ciclismo</item>
         <item>Tenis</item>
-        <item>Atletismo</item>
-        <item>Voleibol</item>
-        <item>Artes marciales</item>
-        <item>Senderismo</item>
-        <item>Esquí</item>
-        <item>Patinaje</item>
+        <item>Otros</item>
     </string-array>
 
-    <!-- Hobbies (Checkbox) -->
+    <!-- Hobbies -->
     <string-array name="hobbies">
+        <item>Seleccionar</item>
         <item>Lectura</item>
         <item>Viajes</item>
         <item>Cocina</item>
-        <item>Películas</item>
-        <item>Videojuegos</item>
-        <item>Arte</item>
-        <item>Fotografía</item>
-        <item>Naturaleza</item>
-        <item>Escritura</item>
         <item>Jardinería</item>
         <item>Manualidades</item>
+        <item>Otros</item>
     </string-array>
 
     <!-- Dieta -->
@@ -348,168 +371,25 @@
         <item>Seleccionar</item>
         <item>Vegetariana</item>
         <item>Vegana</item>
-        <item>Omnívora</item>
-        <item>Ninguna</item>
+        <item>Sin gluten</item>
+        <item>Keto</item>
+        <item>Paleo</item>
+        <item>Mediterránea</item>
+        <item>Otras</item>
     </string-array>
 
-    <!-- Género Musical (Checkbox) -->
+    <!-- Género Musical -->
     <string-array name="generos_musicales">
-        <item>Pop</item>
-        <item>Rock</item>
-        <item>Jazz</item>
-        <item>Reggaetón</item>
-        <item>Clásica</item>
-        <item>Electrónica</item>
-        <item>Hip-Hop</item>
-        <item>Salsa</item>
-        <item>Cumbia</item>
-        <item>Tango</item>
-        <item>Metal</item>
-    </string-array>
-
-    <!-- Rangos de edad de pareja -->
-    <string-array name="rangos_edad_pareja">
         <item>Seleccionar</item>
-        <item>18 a 24 años</item>
-        <item>25 a 29 años</item>
-        <item>30 a 39 años</item>
-        <item>40 a 49 años</item>
-        <item>50 a 59 años</item>
-        <item>60 a 69 años</item>
-        <item>Todas las anteriores</item>
-    </string-array>
-
-    <!-- Nivel Académico de Pareja (Preferencias) -->
-    <string-array name="niveles_academicos_pareja">
-        <item>Primaria</item>
-        <item>Secundaria</item>
-        <item>Técnico</item>
-        <item>Tecnólogo</item>
-        <item>Universitario</item>
-        <item>Posgrado</item>
-        <item>Doctorado</item>
-        <item>Posdoctorado</item>
-        <item>Todas las anteriores</item>
-    </string-array>
-
-    <!-- Tipo de Relación de Pareja (Preferencias) -->
-    <string-array name="tipos_relacion_pareja">
-        <item>Casado</item>
-        <item>Unión libre</item>
-        <item>Todas las anteriores</item>
-    </string-array>
-
-    <!-- Cantidad de Hijos de Pareja (Preferencias) -->
-    <string-array name="cantidades_hijos_pareja">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5 o más</item>
-        <item>Todas las anteriores</item>
-    </string-array>
-
-    <!-- Mascotas de Pareja (Preferencial) -->
-    <string-array name="mascotas_pareja">
-        <item>Perro</item>
-        <item>Gato</item>
-        <item>Ave</item>
-        <item>Reptil</item>
-        <item>Peces</item>
-        <item>Ninguna</item>
-        <item>Todas las anteriores</item>
-    </string-array>
-
-    <!-- Religión de Pareja (Preferencias) -->
-    <string-array name="religiones_pareja">
-        <item>Cristiana</item>
-        <item>Católica</item>
-        <item>Judía</item>
-        <item>Musulmana</item>
-        <item>Hindú</item>
-        <item>Ninguna</item>
-        <item>Todas las anteriores</item>
-    </string-array>
-
-    <!-- Ideología Política de Pareja (Preferencias) -->
-    <string-array name="ideologias_politicas_pareja">
-        <item>Derecha</item>
-        <item>Izquierda</item>
-        <item>Ninguna</item>
-        <item>Todas las anteriores</item>
-    </string-array>
-
-    <!-- Consumo de Alcohol de Pareja (Preferencias) -->
-    <string-array name="consumos_alcohol_pareja">
-        <item>Sí</item>
-        <item>No</item>
-        <item>A veces</item>
-    </string-array>
-
-    <!-- Consumo de Tabaco de Pareja (Preferencias) -->
-    <string-array name="consumos_tabaco_pareja">
-        <item>Sí</item>
-        <item>No</item>
-        <item>A veces</item>
-    </string-array>
-
-    <!-- Dieta de Pareja (Preferencias) -->
-    <string-array name="dietas_pareja">
-        <item>Vegetariana</item>
-        <item>Vegana</item>
-        <item>Omnívora</item>
-        <item>Ninguna</item>
-    </string-array>
-
-    <!-- Género Musical de Pareja (Preferencias) -->
-    <string-array name="generos_musicales_pareja">
         <item>Pop</item>
         <item>Rock</item>
-        <item>Jazz</item>
-        <item>Reggaetón</item>
-        <item>Clásica</item>
         <item>Electrónica</item>
-        <item>Hip-Hop</item>
-        <item>Salsa</item>
-        <item>Cumbia</item>
-        <item>Tango</item>
-        <item>Metal</item>
-        <item>Todas las anteriores</item>
-    </string-array>
-
-    <!-- Deportes (Preferencial) -->
-    <string-array name="deportes_preferencial">
-        <item>Fútbol</item>
-        <item>Baloncesto</item>
-        <item>Natación</item>
-        <item>Gimnasio</item>
-        <item>Yoga</item>
-        <item>Ciclismo</item>
-        <item>Tenis</item>
-        <item>Atletismo</item>
-        <item>Voleibol</item>
-        <item>Artes marciales</item>
-        <item>Senderismo</item>
-        <item>Esquí</item>
-        <item>Patinaje</item>
-        <item>Todas las anteriores</item>
-    </string-array>
-
-    <!-- Hobbies (Preferencial) -->
-    <string-array name="hobbies_preferencial">
-        <item>Lectura</item>
-        <item>Viajes</item>
-        <item>Cocina</item>
-        <item>Películas</item>
-        <item>Videojuegos</item>
-        <item>Arte</item>
-        <item>Fotografía</item>
-        <item>Naturaleza</item>
-        <item>Escritura</item>
-        <item>Jardinería</item>
-        <item>Manualidades</item>
-        <item>Todas las anteriores</item>
+        <item>Hip Hop</item>
+        <item>Reggae</item>
+        <item>Clásica</item>
+        <item>Jazz</item>
+        <item>Latina</item>
+        <item>Otros</item>
     </string-array>
 
 </resources>

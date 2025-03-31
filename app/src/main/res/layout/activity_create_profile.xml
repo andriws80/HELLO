@@ -252,35 +252,35 @@
                 android:id="@+id/perrosCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/perro"
+                android:text="@string/perros"
                 android:layout_marginEnd="16dp" />
 
             <CheckBox
                 android:id="@+id/gatosCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/gato"
+                android:text="@string/gatos"
                 android:layout_marginEnd="16dp"/>
 
             <CheckBox
                 android:id="@+id/conejosCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Conejo(s)"
+                android:text="@string/conejos"
                 android:layout_marginEnd="16dp"/>
 
             <CheckBox
                 android:id="@+id/hamstersCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hámster(s)"
+                android:text="@string/hamsters"
                 android:layout_marginEnd="16dp"/>
 
             <CheckBox
                 android:id="@+id/otrosCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Otro(s)" />
+                android:text="@string/otros_mascotas" />
 
         </LinearLayout>
 
@@ -428,110 +428,93 @@
             android:layout_height="wrap_content"
             android:text="@string/deportes"
             android:layout_marginBottom="8dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
             <CheckBox
                 android:id="@+id/futbolCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/futbol"
                 android:layout_marginEnd="16dp" />
-
             <CheckBox
                 android:id="@+id/baloncestoCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/baloncesto"
                 android:layout_marginEnd="16dp" />
-
             <CheckBox
                 android:id="@+id/natacionCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/natacion"
                 android:layout_marginEnd="16dp" />
-
             <CheckBox
                 android:id="@+id/ciclismoCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ciclismo"
                 android:layout_marginEnd="16dp" />
-
             <CheckBox
                 android:id="@+id/tenisCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tenis"
                 android:layout_marginEnd="16dp" />
-
             <CheckBox
                 android:id="@+id/otrosDeportesCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Otro(s)" />
-
+                android:text="@string/otros_deportes"
+                android:layout_marginEnd="16dp" />
         </LinearLayout>
-
         <!-- Hobbies -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/hobbies"
             android:layout_marginBottom="8dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
             <CheckBox
                 android:id="@+id/lecturaCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/lectura"
                 android:layout_marginEnd="16dp" />
-
             <CheckBox
                 android:id="@+id/viajesCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/viajes"
                 android:layout_marginEnd="16dp" />
-
             <CheckBox
                 android:id="@+id/cocinaCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cocina"
+                android:text="@string/cocina"
                 android:layout_marginEnd="16dp" />
-
             <CheckBox
                 android:id="@+id/jardineriaCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jardinería"
+                android:text="@string/jardineria"
                 android:layout_marginEnd="16dp" />
-
             <CheckBox
                 android:id="@+id/manualidadesCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Manualidades"
+                android:text="@string/manualidades"
                 android:layout_marginEnd="16dp" />
-
             <CheckBox
                 android:id="@+id/otrosHobbiesCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Otro(s)" />
-
+                android:text="@string/otros_hobbies" />
         </LinearLayout>
-
         <!-- Dieta -->
         <TextView
             android:layout_width="match_parent"
@@ -539,14 +522,12 @@
             android:text="@string/dieta"
             android:labelFor="@+id/dietaSpinner"
             android:layout_marginBottom="8dp" />
-
         <Spinner
             android:id="@+id/dietaSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:layout_marginBottom="16dp" />
-
         <!-- Género Musical -->
         <TextView
             android:layout_width="match_parent"
@@ -554,21 +535,32 @@
             android:text="@string/genero_musical"
             android:labelFor="@+id/generoMusicalSpinner"
             android:layout_marginBottom="8dp" />
-
         <Spinner
             android:id="@+id/generoMusicalSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:layout_marginBottom="32dp" />  <!-- Mayor margen inferior para el botón. -->
-
+            android:layout_marginBottom="16dp" />
+        <!-- Pais/Ciudad de residencia -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pais_ciudad_residencia"
+            android:labelFor="@+id/paisCiudadResidenciaAutoCompleteTextView"
+            android:layout_marginBottom="8dp" />
+        <AutoCompleteTextView
+            android:id="@+id/paisCiudadResidenciaAutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:completionThreshold="1"
+            android:layout_marginBottom="16dp" />
         <!-- Botón: Siguiente -->
         <Button
             android:id="@+id/nextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/next_button_label"
-            android:layout_gravity="end"  />  <!-- Alineado a la derecha. -->
-
+            android:layout_gravity="end"
+            android:text="@string/next_button_label" />
     </LinearLayout>
 </ScrollView>
