@@ -9,6 +9,10 @@ android {
     namespace = "com.andriws.hello"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding= true
+    }
+
     defaultConfig {
         applicationId = "com.andriws.hello"
         minSdk = 21
@@ -57,6 +61,7 @@ dependencies {
     // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.9")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.9")
+    implementation ("com.google.android.gms:play-services-appsearch:16.0.1")
 
     // Dependencias para pruebas
     testImplementation("junit:junit:4.13.2") // Pruebas unitarias
