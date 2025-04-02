@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.andriws.hello.databinding.ItemMatchBinding
 import com.bumptech.glide.Glide
 
-class MatchAdapter(private var matchList: List<com.google.android.gms.appsearch.SearchResult>) :
+class MatchAdapter(private var matchList: List<MatchProfile>) : // Usar MatchProfile
     RecyclerView.Adapter<MatchAdapter.MatchViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
@@ -22,29 +22,28 @@ class MatchAdapter(private var matchList: List<com.google.android.gms.appsearch.
 
     override fun getItemCount(): Int = matchList.size
 
-    fun updateData(newList: List<com.google.android.gms.appsearch.SearchResult>) {
+    fun updateData(newList: List<MatchProfile>) { // Usar MatchProfile
         matchList = newList
         notifyDataSetChanged()
     }
 
     inner class MatchViewHolder(private val binding: ItemMatchBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(match: com.google.android.gms.appsearch.SearchResult) {
+        fun bind(match: MatchProfile) { // Usar MatchProfile
             binding.textViewName.text = match.name
-            binding.textViewInfo.text = "${match.age}, ${match.city}" // Ajusta según lo que quieras mostrar en la lista
+            binding.textViewInfo.text = "${match.age}, ${match.city}"
             if (match.profileImageUrl != null) {
                 Glide.with(binding.imageViewProfile.context)
                     .load(match.profileImageUrl)
-                    .placeholder(R.drawable.ic_profile_placeholder) // Reemplaza con tu placeholder
+                    .placeholder(R.drawable.ic_profile_placeholder)
                     .into(binding.imageViewProfile)
             } else {
-                binding.imageViewProfile.setImageResource(R.drawable.ic_profile_placeholder) // Reemplaza con tu placeholder
+                binding.imageViewProfile.setImageResource(R.drawable.ic_profile_placeholder)
             }
 
-            // Añadir OnClickListener para la navegación a detalles
             itemView.setOnClickListener {
                 val intent = Intent(itemView.context, MatchDetailActivity::class.java)
-                intent.putExtra("searchResult", match) // Pasar el objeto SearchResult
+                intent.putExtra("matchProfile", match) // Pasar el objeto MatchProfile
                 itemView.context.startActivity(intent)
             }
         }

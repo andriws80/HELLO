@@ -3,26 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/findMatchActivity">  <!--  Asumiendo que FindMatchActivity es tu nueva actividad principal -->
 
-    <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.andriws.hello.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+    <activity
+        android:id="@+id/findMatchActivity"
+        android:name="com.andriws.hello.FindMatchActivity"
+        android:label="FindMatchActivity"
+        tools:layout="@layout/activity_find_match" />  <!--  Añadido activity para FindMatchActivity -->
 
-        <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.andriws.hello.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+    <!-- Aquí irán otros fragmentos o actividades, si los tienes -->
 
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
-    </fragment>
 </navigation>

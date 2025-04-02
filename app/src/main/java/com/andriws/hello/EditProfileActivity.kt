@@ -20,6 +20,15 @@ import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.IOException
 import java.util.*
+import android.os.Build
+import androidx.core.graphics.decodeBitmap
+
+// Importaciones de Media3 necesarias:
+import androidx.media3.common.MediaItem
+import androidx.media3.datasource.ContentDataSource
+import androidx.media3.datasource.DataSource
+import androidx.media3.exoplayer.image.BitmapDecoder
+import androidx.media3.exoplayer.image.ImageDecoder
 
 class EditProfileActivity : AppCompatActivity() {
 
@@ -216,8 +225,17 @@ class EditProfileActivity : AppCompatActivity() {
                 if (data != null && data.data != null) {
                     selectedImageUri = data.data
                     try {
-                        val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedImageUri)
-                        profileImageView.setImageBitmap(bitmap)
+                        selectedImageUri?.let { uri ->
+                            val bitmap = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                                val source = ContentDataSource.Factory().createDataSource()
+                                source.open(ContentDataSource.uriToDataSource(this, uri))
+                                ImageDecoder.decodeBitmap(BitmapDecoder.Factory(), source)
+                            } else {
+                                @Suppress("DEPRECATION")
+                                MediaStore.Images.Media.getBitmap(contentResolver, uri)
+                            }
+                            profileImageView.setImageBitmap(bitmap)
+                        }
                     } catch (e: IOException) {
                         e.printStackTrace()
                     }
@@ -353,15 +371,16 @@ class EditProfileActivity : AppCompatActivity() {
                         setSpinnerValue(generoMusicalSpinner, it["generoMusical"] as? String)
 
                         val imageUrl = it["imageUrl"] as? String
-                        imageUrl?.let { url ->
-                            Glide.with(this).load(url).into(profileImageView)
+                        if (!imageUrl.isNullOrEmpty()) {
+                            Glide.with(this).load(imageUrl).into(profileImageView)
                         }
                     }
+                } else {
+                    Log.d(TAG, "No such document")
                 }
             }
-            .addOnFailureListener { e ->
-                Log.e(TAG, "Error loading profile data", e)
-                Toast.makeText(this, "Error loading profile data: ${e.message}", Toast.LENGTH_SHORT).show()
+            .addOnFailureListener { exception ->
+                Log.e(TAG, "Error getting document: ", exception)
             }
     }
 
@@ -434,7 +453,6 @@ class EditProfileActivity : AppCompatActivity() {
             "A veces" -> consumoTabacoAVecesRadioButton.isChecked = true
         }
     }
-
 
     companion object {
         private const val TAG = "EditProfileActivity"

@@ -6,7 +6,6 @@ import com.andriws.hello.databinding.ActivityMatchDetailBinding
 import com.bumptech.glide.Glide
 import kotlinx.parcelize.Parcelize
 import android.os.Parcelable
-import androidx.compose.ui.semantics.text
 
 class MatchDetailActivity : AppCompatActivity() {
 
@@ -45,17 +44,18 @@ class MatchDetailActivity : AppCompatActivity() {
             binding.imageViewProfile.setImageResource(R.drawable.ic_profile_placeholder) // Reemplaza con tu placeholder
         }
     }
+
+    //  Mover la declaración de SearchResult aquí, dentro de MatchDetailActivity
+    @Parcelize
+    data class SearchResult(  //  Usar data class en lugar de class
+        var name: String = "",
+        var age: Int = 0,
+        var gender: String = "",
+        var nationality: String = "",
+        var city: String = "",
+        var languages: List<String> = emptyList(),
+        var interests: List<String> = emptyList(),
+        var profileImageUrl: String? = null
+    ) : Parcelable
 }
 
-// Asegúrate de que SearchResult implementa Parcelable y tiene la anotación @Parcelize
-@Parcelize
-class SearchResult(
-    var name: String = "",
-    var age: Int = 0,
-    var gender: String = "",
-    var nationality: String = "",
-    var city: String = "",
-    var languages: List<String> = emptyList(),
-    var interests: List<String> = emptyList(),
-    var profileImageUrl: String? = null
-) : Parcelable

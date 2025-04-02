@@ -37,7 +37,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     private fun showNotification(title: String, message: String) {
         val channelId = "default_channel_id"
         val notificationId = System.currentTimeMillis().toInt()
-        val intent = Intent(this, MainActivity::class.java)
+        val intent = Intent(this, FindMatchActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(
             this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )

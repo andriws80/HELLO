@@ -7,7 +7,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andriws.hello.databinding.ActivityFindMatchBinding
-import com.google.firebase.auth.FirebaseAuth // Importa FirebaseAuth
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 class FindMatchActivity : AppCompatActivity() {
@@ -27,7 +27,7 @@ class FindMatchActivity : AppCompatActivity() {
         firestore = FirebaseFirestore.getInstance()
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = MatchAdapter(emptyList<SearchResult>())
+        adapter = MatchAdapter(emptyList<MatchProfile>()) // Usar MatchProfile
         binding.recyclerView.adapter = adapter
 
         fetchMatches()
@@ -62,16 +62,16 @@ class FindMatchActivity : AppCompatActivity() {
             .get()
             .addOnSuccessListener { documents ->
                 val matchList = documents.map { document ->
-                    SearchResult().apply {
-                        name = document.getString("name") ?: ""
-                        age = document.getLong("age")?.toInt() ?: 0
-                        gender = document.getString("gender") ?: ""
-                        nationality = document.getString("nationality") ?: ""
-                        city = document.getString("city") ?: ""
-                        languages = document.get("languages") as? List<String> ?: emptyList()
-                        interests = document.get("interests") as? List<String> ?: emptyList()
+                    MatchProfile( // Usar MatchProfile y mapear los campos
+                        name = document.getString("name") ?: "",
+                        age = document.getLong("age")?.toInt() ?: 0,
+                        gender = document.getString("gender") ?: "",
+                        nationality = document.getString("nationality") ?: "",
+                        city = document.getString("city") ?: "",
+                        languages = document.get("languages") as? List<String> ?: emptyList(),
+                        interests = document.get("interests") as? List<String> ?: emptyList(),
                         profileImageUrl = document.getString("profileImageUrl")
-                    }
+                    )
                 }
                 val shuffledList = matchList.shuffled()
                 adapter.updateData(shuffledList)
