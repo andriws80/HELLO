@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId = "com.andriws.hello"
-        minSdk = 21
+        minSdk = 33
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -44,16 +44,14 @@ android {
 }
 
 dependencies {
-
-
-    // AndroidX
-    implementation("androidx.core:core-ktx:1.15.0")
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("com.google.android.material:material:1.12.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.2.1")
+    // AndroidX - Dependencias actualizadas
+    implementation("androidx.core:core-ktx:1.15.0")  //  Verificar última versión estable
+    implementation("androidx.appcompat:appcompat:1.7.0") //  Verificar última versión estable
+    implementation("com.google.android.material:material:1.12.0") //  Verificar última versión estable
+    implementation("androidx.constraintlayout:constraintlayout:2.2.1") //  Verificar última versión estable
 
     // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:33.10.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.10.0"))  // Verificar última versión
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-storage-ktx")
@@ -62,13 +60,6 @@ dependencies {
     // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.9")
     implementation("androidx.navigation:navigation-ui-ktx:2.8.9")
-
-    // ExoPlayer (Media3)
-    implementation(libs.androidx.media3.exoplayer)
-    implementation(libs.androidx.media3.exoplayer.image)
-    implementation(libs.androidx.media3.datasource)
-    implementation(libs.androidx.media3.common)
-    implementation(libs.androidx.media3.session)
 
     // Glide para carga de imágenes
     implementation("com.github.bumptech.glide:glide:4.16.0")

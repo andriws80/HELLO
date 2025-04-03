@@ -7,37 +7,37 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />  <!-- Permiso para notificaciones -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
     <application
         android:allowBackup="true"
         android:theme="@style/Theme.Hello"
         android:label="Hello App"
-        android:supportsRtl="true">
+    android:supportsRtl="true">
 
-        <!-- Actividad de inicio -->
-        <activity android:name=".LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+    <!-- Actividad de inicio -->
+    <activity android:name=".LoginActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN"/>
+            <category android:name="android.intent.category.LAUNCHER"/>
+        </intent-filter>
+    </activity>
 
-        <activity android:name=".RegisterActivity" android:exported="false"/>
-        <activity android:name=".MainActivity" android:exported="true"/>
-        <activity android:name=".CreateProfileActivity" android:exported="false"/>
-        <activity android:name=".EditProfileActivity" android:exported="false"/>
+    <activity android:name=".RegisterActivity" android:exported="false"/>
+    <activity android:name=".EditProfileActivity" android:exported="false"/>
+    <activity android:name=".FindMatchActivity" android:exported="false"/>
+    <activity android:name=".MatchDetailActivity" android:exported="false"/>
 
 
-        <!-- Configuración de Firebase -->
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="@string/default_notification_channel_id" />
+    <!-- Configuración de Firebase -->
+    <meta-data
+        android:name="com.google.firebase.messaging.default_notification_channel_id"
+        android:value="@string/default_notification_channel_id" />
 
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_notification" />
-    </application>
+    <meta-data
+        android:name="com.google.firebase.messaging.default_notification_icon"
+        android:resource="@drawable/ic_notification" />
+</application>
 
-</manifest>
+    </manifest>

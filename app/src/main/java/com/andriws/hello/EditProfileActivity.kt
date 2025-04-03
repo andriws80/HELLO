@@ -23,12 +23,7 @@ import java.util.*
 import android.os.Build
 import androidx.core.graphics.decodeBitmap
 
-// Importaciones de Media3 necesarias:
-import androidx.media3.common.MediaItem
-import androidx.media3.datasource.ContentDataSource
-import androidx.media3.datasource.DataSource
-import androidx.media3.exoplayer.image.BitmapDecoder
-import androidx.media3.exoplayer.image.ImageDecoder
+
 
 class EditProfileActivity : AppCompatActivity() {
 
@@ -226,17 +221,11 @@ class EditProfileActivity : AppCompatActivity() {
                     selectedImageUri = data.data
                     try {
                         selectedImageUri?.let { uri ->
-                            val bitmap = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                                val source = ContentDataSource.Factory().createDataSource()
-                                source.open(ContentDataSource.uriToDataSource(this, uri))
-                                ImageDecoder.decodeBitmap(BitmapDecoder.Factory(), source)
-                            } else {
-                                @Suppress("DEPRECATION")
-                                MediaStore.Images.Media.getBitmap(contentResolver, uri)
-                            }
-                            profileImageView.setImageBitmap(bitmap)
+                            Glide.with(this)
+                                .load(uri)
+                                .into(profileImageView)
                         }
-                    } catch (e: IOException) {
+                    } catch (e: Exception) {
                         e.printStackTrace()
                     }
                 }

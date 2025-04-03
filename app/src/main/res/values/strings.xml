@@ -8,6 +8,12 @@
     <string name="accept_terms">Aceptar términos y condiciones</string>
     <string name="next">Siguiente</string>
 
+
+    <!-- Strings para accesibilidad en item_match.xml -->
+    <string name="profile_photo_description">Foto de perfil</string>
+    <string name="match_name_description">Nombre de la pareja:</string>
+    <string name="match_info_description">Información de la pareja:</string>
+
     <!-- ************************************************************************************** -->
     <!-- *****************************  FORMULARIO INDIVIDUAL  ******************************* -->
     <!-- ************************************************************************************** -->

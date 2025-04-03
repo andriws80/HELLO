@@ -16,7 +16,7 @@ class MatchDetailActivity : AppCompatActivity() {
         binding = ActivityMatchDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val searchResult = intent.getParcelableExtra<SearchResult>("searchResult")
+        val searchResult = intent.getParcelableExtra("searchResult", SearchResult::class.java)
 
         if (searchResult != null) {
             displayMatchDetails(searchResult)

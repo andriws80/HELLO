@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.andriws.hello.databinding.ActivityFindMatchBinding
@@ -13,7 +14,8 @@ import com.google.firebase.firestore.FirebaseFirestore
 class FindMatchActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityFindMatchBinding
-    private lateinit var firestore: FirebaseFirestore
+    private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+    private val matchViewModel: MatchViewModel by viewModels()
     private lateinit var adapter: MatchAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,62 +26,66 @@ class FindMatchActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        firestore = FirebaseFirestore.getInstance()
-
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = MatchAdapter(emptyList<MatchProfile>()) // Usar MatchProfile
+        adapter = MatchAdapter(emptyList()) // Adaptador ahora maneja List<Match>
         binding.recyclerView.adapter = adapter
 
-        fetchMatches()
+        fetchCurrentUserAndMatches()
     }
 
-    private fun fetchMatches() {
+    private fun fetchCurrentUserAndMatches() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
             firestore.collection("users").document(currentUser.uid).get()
-                .addOnSuccessListener { document ->
-                    val userCity = document.getString("city") ?: ""
-                    if (userCity.isNotEmpty()) {
-                        queryMatchesByCity(userCity)
+                .addOnSuccessListener { currentUserProfile ->
+                    if (currentUserProfile != null) {
+                        fetchAllUserProfiles(currentUserProfile)
                     } else {
-                        Log.w("FindMatchActivity", "Ciudad del usuario no encontrada en Firestore.")
-                        // TODO: Manejar el caso en que la ciudad del usuario no está definida (mostrar un mensaje al usuario, etc.)
+                        Log.w("FindMatchActivity", "Perfil del usuario actual no encontrado.")
+                        // TODO: Manejar el caso en que el perfil del usuario no existe
                     }
                 }
                 .addOnFailureListener { exception ->
-                    Log.w("FindMatchActivity", "Error al obtener la ciudad del usuario: ", exception)
-                    // TODO: Manejar el error al obtener la ciudad (mostrar un mensaje al usuario, etc.)
+                    Log.w("FindMatchActivity", "Error al obtener el perfil del usuario: ", exception)
+                    // TODO: Manejar el error al obtener el perfil del usuario
                 }
         } else {
             Log.w("FindMatchActivity", "Usuario no autenticado.")
-            // TODO: Manejar el caso en que el usuario no está autenticado (quizás redirigir a la pantalla de inicio de sesión)
+            // TODO: Manejar el caso en que el usuario no está autenticado
         }
     }
 
-    private fun queryMatchesByCity(userCity: String) {
-        firestore.collection("users") // O "couples"
-            .whereEqualTo("city", userCity)
+    private fun fetchAllUserProfiles(currentUserProfile: com.google.firebase.firestore.DocumentSnapshot) {
+        firestore.collection("users")
             .get()
-            .addOnSuccessListener { documents ->
-                val matchList = documents.map { document ->
-                    MatchProfile( // Usar MatchProfile y mapear los campos
-                        name = document.getString("name") ?: "",
-                        age = document.getLong("age")?.toInt() ?: 0,
-                        gender = document.getString("gender") ?: "",
-                        nationality = document.getString("nationality") ?: "",
-                        city = document.getString("city") ?: "",
-                        languages = document.get("languages") as? List<String> ?: emptyList(),
-                        interests = document.get("interests") as? List<String> ?: emptyList(),
-                        profileImageUrl = document.getString("profileImageUrl")
-                    )
+            .addOnSuccessListener { allUserProfilesSnapshot ->
+                val allUserProfiles = allUserProfilesSnapshot.documents
+                if (allUserProfiles.isNotEmpty()) {
+                    calculateAndDisplayMatches(currentUserProfile, allUserProfiles)
+                } else {
+                    Log.w("FindMatchActivity", "No se encontraron otros perfiles de usuario.")
+                    // TODO: Manejar el caso en que no hay otros perfiles
                 }
-                val shuffledList = matchList.shuffled()
-                adapter.updateData(shuffledList)
             }
             .addOnFailureListener { exception ->
-                Log.w("FindMatchActivity", "Error al obtener las parejas: ", exception)
-                // TODO: Manejar el error al obtener las parejas (mostrar un mensaje al usuario, etc.)
+                Log.w("FindMatchActivity", "Error al obtener otros perfiles: ", exception)
+                // TODO: Manejar el error al obtener otros perfiles
             }
+    }
+
+    private fun calculateAndDisplayMatches(
+        currentUserProfile: com.google.firebase.firestore.DocumentSnapshot,
+        allUserProfiles: List<com.google.firebase.firestore.DocumentSnapshot>
+    ) {
+        //  Asume que tienes un mecanismo para determinar si el usuario es premium (ej., en el perfil)
+        val isPremiumUser = currentUserProfile.getBoolean("esPremium") ?: false
+
+        val matches = matchViewModel.findMatches(currentUserProfile, allUserProfiles, isPremiumUser)
+        displayMatches(matches)
+    }
+
+    private fun displayMatches(matches: List<Match>) {
+        adapter.updateData(matches)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -94,10 +100,12 @@ class FindMatchActivity : AppCompatActivity() {
                 //  y navegar a la pantalla de inicio de sesión.
                 true
             }
+
             android.R.id.home -> {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }

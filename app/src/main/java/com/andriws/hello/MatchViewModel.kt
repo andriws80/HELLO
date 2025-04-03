@@ -51,13 +51,29 @@ class MatchViewModel : ViewModel() {
         if (sharedAlcohol) score += 0.01
         if (sharedTabaco) score += 0.01
 
-        val hobbies1 = user1.get("hobbies") as? List<String> ?: emptyList()
-        val hobbies2 = user2.get("hobbies") as? List<String> ?: emptyList()
+        val hobbies1 = if (user1.get("hobbies") is List<*>) {
+            (user1.get("hobbies") as List<*>).filterIsInstance<String>()
+        } else {
+            emptyList()
+        }
+        val hobbies2 = if (user2.get("hobbies") is List<*>) {
+            (user2.get("hobbies") as List<*>).filterIsInstance<String>()
+        } else {
+            emptyList()
+        }
         val sharedHobbies = hobbies1.intersect(hobbies2.toSet()).size
         score += (sharedHobbies * 0.01).coerceAtMost(0.05)
 
-        val deportes1 = user1.get("deportes") as? List<String> ?: emptyList()
-        val deportes2 = user2.get("deportes") as? List<String> ?: emptyList()
+        val deportes1 = if (user1.get("deportes") is List<*>) {
+            (user1.get("deportes") as List<*>).filterIsInstance<String>()
+        } else {
+            emptyList()
+        }
+        val deportes2 = if (user2.get("deportes") is List<*>) {
+            (user2.get("deportes") as List<*>).filterIsInstance<String>()
+        } else {
+            emptyList()
+        }
         val sharedDeportes = deportes1.intersect(deportes2.toSet()).size
         score += (sharedDeportes * 0.01).coerceAtMost(0.05)
 
@@ -65,8 +81,16 @@ class MatchViewModel : ViewModel() {
     }
 
     private fun areMBTICompatible(user1: DocumentSnapshot, user2: DocumentSnapshot): Boolean {
-        val personality1 = user1.get("personalidad") as? List<String> ?: emptyList()
-        val personality2 = user2.get("personalidad") as? List<String> ?: emptyList()
+        val personality1 = if (user1.get("personalidad") is List<*>) {
+            (user1.get("personalidad") as List<*>).filterIsInstance<String>()
+        } else {
+            emptyList()
+        }
+        val personality2 = if (user2.get("personalidad") is List<*>) {
+            (user2.get("personalidad") as List<*>).filterIsInstance<String>()
+        } else {
+            emptyList()
+        }
 
         return personality1.any { it in personality2 }
     }
