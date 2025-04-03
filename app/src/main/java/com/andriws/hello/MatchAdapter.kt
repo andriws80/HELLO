@@ -7,8 +7,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.andriws.hello.databinding.ItemMatchBinding
 import com.bumptech.glide.Glide
 import com.google.firebase.firestore.FirebaseFirestore
+//import java.util.Locale
 
-class MatchAdapter(private var matchList: List<Match>) :
+class MatchAdapter(private var matchList: MutableList<Match>) : // Usar MutableList
     RecyclerView.Adapter<MatchAdapter.MatchViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
@@ -24,29 +25,38 @@ class MatchAdapter(private var matchList: List<Match>) :
     override fun getItemCount(): Int = matchList.size
 
     fun updateData(newList: List<Match>) {
-        matchList = newList
-        notifyDataSetChanged()
+        // Calcular las diferencias y actualizar de forma eficiente
+        val diffResult = androidx.recyclerview.widget.DiffUtil.calculateDiff(MatchDiffCallback(matchList, newList))
+        matchList.clear()
+        matchList.addAll(newList)
+        diffResult.dispatchUpdatesTo(this)
     }
 
     inner class MatchViewHolder(private val binding: ItemMatchBinding) : RecyclerView.ViewHolder(binding.root) {
         private val firestore = FirebaseFirestore.getInstance()
 
         fun bind(match: Match) {
-            //  Asumiendo que quieres mostrar el nombre y la foto del "otro" usuario (user2)
-            val otherUserId = match.user2Id  // o user1Id si quieres mostrar el del primer usuario.
+            val context = itemView.context // Obtener el contexto aquí
+            val otherUserId = match.user2Id
             firestore.collection("users").document(otherUserId).get()
                 .addOnSuccessListener { document ->
-                    val name = document.getString("name") ?: "Nombre no disponible"
+                    val name = document.getString("name") ?: context.getString(R.string.name_not_available)
                     val age = document.getLong("age")?.toInt() ?: 0
-                    val city = document.getString("city") ?: "Ciudad no disponible"
+                    val city = document.getString("city") ?: context.getString(R.string.city_not_available)
                     val profileImageUrl = document.getString("profileImageUrl")
 
                     binding.textViewName.text = name
-                    binding.textViewInfo.text = "$age, $city - Compatibilidad: ${String.format("%.2f", match.score * 100)}%"  // Incluye el score
 
-                    // Actualizar contentDescription dinámicamente
-                    binding.textViewName.contentDescription = itemView.context.getString(R.string.match_name_description) + " " + name
-                    binding.textViewInfo.contentDescription = itemView.context.getString(R.string.match_info_description) + " " + "$age, $city"
+                    // Usar string resource con placeholders y String.format(Locale.getDefault(), ...)
+                    val infoText = context.getString(R.string.match_info_format, age, city, match.score * 100)
+                    binding.textViewInfo.text = infoText
+
+                    // Actualizar contentDescription dinámicamente (igual que antes, pero usando infoText)
+                    binding.textViewName.contentDescription =
+                        context.getString(R.string.match_name_description) + " " + name
+                    binding.textViewInfo.contentDescription =
+                        context.getString(R.string.match_info_description) + " " + infoText  // Usar infoText aquí
+
 
                     if (profileImageUrl != null) {
                         Glide.with(binding.imageViewProfile.context)
@@ -58,12 +68,29 @@ class MatchAdapter(private var matchList: List<Match>) :
                     }
 
                     itemView.setOnClickListener {
-                        //  Pasar el ID del otro usuario y/o la información necesaria a la actividad de detalles.
-                        val intent = Intent(itemView.context, MatchDetailActivity::class.java)
-                        intent.putExtra("otherUserId", otherUserId) // Opcional: si necesitas más datos, pasa un Bundle o un objeto Parcelable.
-                        itemView.context.startActivity(intent)
+                        val intent = Intent(context, MatchDetailActivity::class.java)  // Usar context aquí
+                        intent.putExtra("otherUserId", otherUserId)
+                        context.startActivity(intent) // Usar context aquí
                     }
                 }
         }
+    }
+}
+
+// 1. DiffUtil Callback
+class MatchDiffCallback(
+    private val oldList: List<Match>,
+    private val newList: List<Match>
+) : androidx.recyclerview.widget.DiffUtil.Callback() {
+
+    override fun getOldListSize(): Int = oldList.size
+    override fun getNewListSize(): Int = newList.size
+
+    override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return oldList[oldItemPosition].user2Id == newList[newItemPosition].user2Id // O el ID que uses
+    }
+
+    override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+        return oldList[oldItemPosition] == newList[newItemPosition]
     }
 }

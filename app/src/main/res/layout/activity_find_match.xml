@@ -16,8 +16,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:title="Buscar Parejas"
-        app:menu="@menu/find_match_menu"
-        style="@style/Widget.MaterialComponents.Toolbar.Primary" />  <!-- Estilo de la Toolbar -->
+            app:menu="@menu/find_match_menu"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary" />  <!-- Estilo de la Toolbar -->
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -26,7 +26,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:listitem="@layout/item_match" />  <!-- Placeholder para un item de la lista (crearemos item_match.xml después) -->
+        tools:listitem="@layout/item_match"
+        android:contentDescription="@string/match_list_description" />  <!--  Añadido  -->
 
     <!--  Opcional: Botón flotante para filtrar o realizar alguna acción  -->
     <!--

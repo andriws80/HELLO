@@ -18,11 +18,12 @@
 
     <!-- Fondos adicionales -->
     <color name="background_gray">#D0D0D0</color>
+    <!-- Color de fondo contrastante para el placeholder -->
+    <color name="profile_placeholder_background">#E0E0E0</color>
 
     <!-- Extras -->
     <color name="white">#FFFFFF</color>
     <color name="dark_blue">#1E3A8A</color>
     <color name="black">#000000</color>
-
 
 </resources>

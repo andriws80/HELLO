@@ -8,7 +8,6 @@
     <string name="accept_terms">Aceptar términos y condiciones</string>
     <string name="next">Siguiente</string>
 
-
     <!-- Strings para accesibilidad en item_match.xml -->
     <string name="profile_photo_description">Foto de perfil</string>
     <string name="match_name_description">Nombre de la pareja:</string>
@@ -20,7 +19,7 @@
 
     <!-- Sección: Datos Individuales (Persona 1) -->
     <string name="create_profile_title">Crea tu Perfil</string>  <!-- O el texto que desees para el título -->
-    <string name="section_individual_1">Datos Individuales - Persona 1</string>
+    <string name="section_individual_1">Datos Individuales – Persona 1</string>
     <string name="name_hint_1">Nombres (Persona 1)</string>
     <string name="lastname_hint_1">Apellidos (Persona 1)</string>
     <string name="edad_1">Edad (Persona 1)</string>
@@ -30,7 +29,7 @@
     <string name="nivel_academico_1">Nivel Académico (Persona 1)</string>
 
     <!-- Sección: Datos Individuales (Persona 2) -->
-    <string name="section_individual_2">Datos Individuales - Persona 2</string>
+    <string name="section_individual_2">Datos Individuales – Persona 2</string>
     <string name="name_hint_2">Nombres (Persona 2)</string>
     <string name="lastname_hint_2">Apellidos (Persona 2)</string>
     <string name="edad_2">Edad (Persona 2)</string>
@@ -43,9 +42,9 @@
     <!-- *****************************  FORMULARIO EN PAREJA  ********************************* -->
     <!-- ************************************************************************************** -->
 
-    <!-- Sección: Foto de Perfil (Compartida - 1 a 4 fotos) -->
-    <string name="section_profile_photos">Fotos de Perfil (1-4 fotos)</string>
-    <string name="profile_photos_description">Selecciona de 1 a 4 fotos grupales</string>
+    <!-- Sección: Foto de Perfil (Compartida – 1 a 4 fotos) -->
+    <string name="section_profile_photos">Fotos de Perfil (1–4 fotos)</string>
+    <string name="profile_photos_description">Selecciona de 1–4 fotos grupales</string>
     <string name="add_photo">Agregar Foto</string>
 
     <!-- Sección: Datos Adicionales (En Común) -->
@@ -121,72 +120,72 @@
     <!-- Nacionalidades (países y ciudades) -->
     <string-array name="nacionalidades">
         <item>Seleccionar</item>
-        <item>Argentina - Buenos Aires</item>
-        <item>Argentina - Córdoba</item>
-        <item>Argentina - Rosario</item>
-        <item>Bolivia - La Paz</item>
-        <item>Bolivia - Cochabamba</item>
-        <item>Bolivia - Santa Cruz</item>
-        <item>Brasil - São Paulo</item>
-        <item>Brasil - Río de Janeiro</item>
-        <item>Brasil - Brasilia</item>
-        <item>Chile - Santiago</item>
-        <item>Chile - Valparaíso</item>
-        <item>Chile - Concepción</item>
-        <item>Colombia - Bogotá</item>
-        <item>Colombia - Medellín</item>
-        <item>Colombia - Cali</item>
-        <item>Costa Rica - San José</item>
-        <item>Costa Rica - Alajuela</item>
-        <item>Costa Rica - Cartago</item>
-        <item>Cuba - La Habana</item>
-        <item>Cuba - Santiago de Cuba</item>
-        <item>Cuba - Camagüey</item>
-        <item>Ecuador - Quito</item>
-        <item>Ecuador - Guayaquil</item>
-        <item>Ecuador - Cuenca</item>
-        <item>El Salvador - San Salvador</item>
-        <item>El Salvador - Santa Ana</item>
-        <item>El Salvador - San Miguel</item>
-        <item>España - Madrid</item>
-        <item>España - Barcelona</item>
-        <item>España - Valencia</item>
-        <item>Estados Unidos - Nueva York</item>
-        <item>Estados Unidos - Los Ángeles</item>
-        <item>Estados Unidos - Chicago</item>
-        <item>Guatemala - Ciudad de Guatemala</item>
-        <item>Guatemala - Quetzaltenango</item>
-        <item>Guatemala - Escuintla</item>
-        <item>Honduras - Tegucigalpa</item>
-        <item>Honduras - San Pedro Sula</item>
-        <item>Honduras - La Ceiba</item>
-        <item>México - CDMX</item>
-        <item>México - Monterrey</item>
-        <item>México - Guadalajara</item>
-        <item>Nicaragua - Managua</item>
-        <item>Nicaragua - León</item>
-        <item>Nicaragua - Granada</item>
-        <item>Panamá - Ciudad de Panamá</item>
-        <item>Panamá - Colón</item>
-        <item>Panamá - David</item>
-        <item>Paraguay - Asunción</item>
-        <item>Paraguay - Ciudad del Este</item>
-        <item>Paraguay - Encarnación</item>
-        <item>Perú - Lima</item>
-        <item>Perú - Arequipa</item>
-        <item>Perú - Cusco</item>
-        <item>Puerto Rico - San Juan</item>
-        <item>Puerto Rico - Ponce</item>
-        <item>Puerto Rico - Bayamón</item>
-        <item>República Dominicana - Santo Domingo</item>
-        <item>República Dominicana - Santiago</item>
-        <item>República Dominicana - La Romana</item>
-        <item>Uruguay - Montevideo</item>
-        <item>Uruguay - Punta del Este</item>
-        <item>Uruguay - Salto</item>
-        <item>Venezuela - Caracas</item>
-        <item>Venezuela - Maracaibo</item>
-        <item>Venezuela - Valencia</item>
+        <item>Argentina – Buenos Aires</item>
+        <item>Argentina – Córdoba</item>
+        <item>Argentina – Rosario</item>
+        <item>Bolivia – La Paz</item>
+        <item>Bolivia – Cochabamba</item>
+        <item>Bolivia – Santa Cruz</item>
+        <item>Brasil – São Paulo</item>
+        <item>Brasil – Río de Janeiro</item>
+        <item>Brasil – Brasilia</item>
+        <item>Chile – Santiago</item>
+        <item>Chile – Valparaíso</item>
+        <item>Chile – Concepción</item>
+        <item>Colombia – Bogotá</item>
+        <item>Colombia – Medellín</item>
+        <item>Colombia – Cali</item>
+        <item>Costa Rica – San José</item>
+        <item>Costa Rica – Alajuela</item>
+        <item>Costa Rica – Cartago</item>
+        <item>Cuba – La Habana</item>
+        <item>Cuba – Santiago de Cuba</item>
+        <item>Cuba – Camagüey</item>
+        <item>Ecuador – Quito</item>
+        <item>Ecuador – Guayaquil</item>
+        <item>Ecuador – Cuenca</item>
+        <item>El Salvador – San Salvador</item>
+        <item>El Salvador – Santa Ana</item>
+        <item>El Salvador – San Miguel</item>
+        <item>España – Madrid</item>
+        <item>España – Barcelona</item>
+        <item>España – Valencia</item>
+        <item>Estados Unidos – Nueva York</item>
+        <item>Estados Unidos – Los Ángeles</item>
+        <item>Estados Unidos – Chicago</item>
+        <item>Guatemala – Ciudad de Guatemala</item>
+        <item>Guatemala – Quetzaltenango</item>
+        <item>Guatemala – Escuintla</item>
+        <item>Honduras – Tegucigalpa</item>
+        <item>Honduras – San Pedro Sula</item>
+        <item>Honduras – La Ceiba</item>
+        <item>México – CDMX</item>
+        <item>México – Monterrey</item>
+        <item>México – Guadalajara</item>
+        <item>Nicaragua – Managua</item>
+        <item>Nicaragua – León</item>
+        <item>Nicaragua – Granada</item>
+        <item>Panamá – Ciudad de Panamá</item>
+        <item>Panamá – Colón</item>
+        <item>Panamá – David</item>
+        <item>Paraguay – Asunción</item>
+        <item>Paraguay – Ciudad del Este</item>
+        <item>Paraguay – Encarnación</item>
+        <item>Perú – Lima</item>
+        <item>Perú – Arequipa</item>
+        <item>Perú – Cusco</item>
+        <item>Puerto Rico – San Juan</item>
+        <item>Puerto Rico – Ponce</item>
+        <item>Puerto Rico – Bayamón</item>
+        <item>República Dominicana – Santo Domingo</item>
+        <item>República Dominicana – Santiago</item>
+        <item>República Dominicana – La Romana</item>
+        <item>Uruguay – Montevideo</item>
+        <item>Uruguay – Punta del Este</item>
+        <item>Uruguay – Salto</item>
+        <item>Venezuela – Caracas</item>
+        <item>Venezuela – Maracaibo</item>
+        <item>Venezuela – Valencia</item>
     </string-array>
 
     <!-- Razas -->
@@ -418,5 +417,10 @@
     <string name="action_settings">Settings</string>
 
     <!-- ... más strings si los tienes ... -->
-
+    <string name="match_info_format">%1$d, %2$s - Compatibilidad: %3$.2f%%</string>
+    <string name="name_not_available">Nombre no disponible</string>
+    <string name="city_not_available">Ciudad no disponible</string>
+    <string name="match_name_placeholder">Nombre de la Pareja</string>
+    <string name="match_info_placeholder">Información adicional (ej: edad, ubicación)</string>
+    <string name="match_list_description">Lista de posibles parejas</string>  <!-- Añadido -->
 </resources>

@@ -19,6 +19,7 @@
             android:layout_height="64dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_profile_placeholder"
+            android:background="@color/profile_placeholder_background"
             android:contentDescription="@string/profile_photo_description" />
 
         <LinearLayout
@@ -32,18 +33,18 @@
                 android:id="@+id/textViewName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nombre de la Pareja"
+                android:text="@string/match_name_placeholder"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:contentDescription="@string/match_name_description" />  <!-- Añadido contentDescription -->
+                android:contentDescription="@string/match_name_description" />
 
             <TextView
                 android:id="@+id/textViewInfo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Información adicional (ej: edad, ubicación)"
+                android:text="@string/match_info_placeholder"
                 android:textSize="14sp"
-                android:contentDescription="@string/match_info_description" />  <!-- Añadido contentDescription -->
+                android:contentDescription="@string/match_info_description" />
 
         </LinearLayout>
 

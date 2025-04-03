@@ -27,7 +27,7 @@ class FindMatchActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        adapter = MatchAdapter(emptyList()) // Adaptador ahora maneja List<Match>
+        adapter = MatchAdapter(mutableListOf())
         binding.recyclerView.adapter = adapter
 
         fetchCurrentUserAndMatches()
@@ -78,7 +78,7 @@ class FindMatchActivity : AppCompatActivity() {
         allUserProfiles: List<com.google.firebase.firestore.DocumentSnapshot>
     ) {
         //  Asume que tienes un mecanismo para determinar si el usuario es premium (ej., en el perfil)
-        val isPremiumUser = currentUserProfile.getBoolean("esPremium") ?: false
+        val isPremiumUser = currentUserProfile.getBoolean("esPremium") == true
 
         val matches = matchViewModel.findMatches(currentUserProfile, allUserProfiles, isPremiumUser)
         displayMatches(matches)
