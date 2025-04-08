@@ -18,14 +18,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-import java.io.IOException
 import java.util.*
-import android.os.Build
-import androidx.core.graphics.decodeBitmap
 
 
-
-class EditProfileActivity : AppCompatActivity() {
+class CreateProfileActivity : AppCompatActivity() {
 
     private lateinit var profileImageView: ImageView
     private lateinit var changeImageButton: Button

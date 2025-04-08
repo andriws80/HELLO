@@ -12,10 +12,11 @@ android {
 
     defaultConfig {
         applicationId = "com.andriws.hello"
-        minSdk = 33
-        targetSdk = 34
+        minSdk = 24
+        targetSdk = 34 // Corregido: targetSdk debe ser 34 o superior para cumplir con las políticas de Google Play
         versionCode = 1
         versionName = "1.0"
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -24,12 +25,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 
     buildTypes {
@@ -44,40 +45,42 @@ android {
 }
 
 dependencies {
-    // AndroidX - Dependencias actualizadas
-    implementation("androidx.core:core-ktx:1.15.0")  //  Verificar última versión estable
-    implementation("androidx.appcompat:appcompat:1.7.0") //  Verificar última versión estable
-    implementation("com.google.android.material:material:1.12.0") //  Verificar última versión estable
-    implementation("androidx.constraintlayout:constraintlayout:2.2.1") //  Verificar última versión estable
+    // AndroidX - Dependencias actualizadas (se mantienen las versiones estables actuales)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.constraintlayout)
 
-    // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:33.10.0"))  // Verificar última versión
-    implementation("com.google.firebase:firebase-auth-ktx")
-    implementation("com.google.firebase:firebase-firestore-ktx")
-    implementation("com.google.firebase:firebase-storage-ktx")
-    implementation("com.google.firebase:firebase-messaging-ktx")
+    // Firebase - Dependencias actualizadas (se mantienen las versiones estables actuales)
+    implementation(platform(libs.firebase.bom)) // Corregido: Uso de platform() para el BoM
+    implementation(libs.google.firebase.auth.ktx)
+    implementation(libs.google.firebase.firestore.ktx)
+    implementation(libs.google.firebase.storage.ktx)
+    implementation(libs.google.firebase.messaging.ktx)
 
-    // Navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.8.9")
-    implementation("androidx.navigation:navigation-ui-ktx:2.8.9")
+    // Navigation - Dependencias actualizadas (se mantienen las versiones estables actuales)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
-    // Glide para carga de imágenes
-    implementation("com.github.bumptech.glide:glide:4.16.0")
-    kapt("com.github.bumptech.glide:compiler:4.16.0")
+    // Glide para carga de imágenes (se mantiene la versión estable actual)
+    implementation(libs.glide)
+    kapt(libs.compiler)
 
-    // CircleImageView
-    implementation("de.hdodenhof:circleimageview:3.1.0")
+    // CircleImageView (se mantiene la versión estable actual)
+    implementation(libs.circleimageview)
 
-    // Picasso
-    implementation("com.squareup.picasso:picasso:2.8")
+    // Play Services - Dependencias actualizadas
+    implementation(libs.play.services.auth.v2120)
 
-    // Play Services
-    implementation("com.google.android.gms:play-services-auth:21.3.0")
+    // Testing (se mantienen las versiones estables actuales)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 
-    // Testing
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    // RecyclerView and CardView (se mantienen las versiones estables actuales)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.cardview)
+    implementation(libs.flexbox)
 }
 
 apply(plugin = "com.google.gms.google-services")

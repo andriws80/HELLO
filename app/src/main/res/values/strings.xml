@@ -10,6 +10,7 @@
 
     <!-- Strings para accesibilidad en item_match.xml -->
     <string name="profile_photo_description">Foto de perfil</string>
+    <string name="max_photos_allowed">Se permite un máximo de 4 fotos.</string>
     <string name="match_name_description">Nombre de la pareja:</string>
     <string name="match_info_description">Información de la pareja:</string>
 
@@ -18,11 +19,12 @@
     <!-- ************************************************************************************** -->
 
     <!-- Sección: Datos Individuales (Persona 1) -->
-    <string name="create_profile_title">Crea tu Perfil</string>  <!-- O el texto que desees para el título -->
+    <string name="create_profile_title">Crea tu Perfil</string>
     <string name="section_individual_1">Datos Individuales – Persona 1</string>
     <string name="name_hint_1">Nombres (Persona 1)</string>
     <string name="lastname_hint_1">Apellidos (Persona 1)</string>
     <string name="edad_1">Edad (Persona 1)</string>
+    <string name="edad_hint_1">Introduce la edad de la Persona 1</string>  <!-- O un texto más específico -->
     <string name="nacionalidad_1">Nacionalidad (Persona 1)</string>
     <string name="raza_1">Raza (Persona 1)</string>
     <string name="personalidad_1">Personalidad (Persona 1)</string>
@@ -33,6 +35,7 @@
     <string name="name_hint_2">Nombres (Persona 2)</string>
     <string name="lastname_hint_2">Apellidos (Persona 2)</string>
     <string name="edad_2">Edad (Persona 2)</string>
+    <string name="edad_hint_2">Introduce la edad de la Persona 2</string>  <!-- Similar para la Persona 2 -->
     <string name="nacionalidad_2">Nacionalidad (Persona 2)</string>
     <string name="raza_2">Raza (Persona 2)</string>
     <string name="personalidad_2">Personalidad (Persona 2)</string>
@@ -284,7 +287,6 @@
         <item>Posgrado</item>
         <item>Doctorado</item>
         <item>Posdoctorado</item>
-        <item>Todas las anteriores</item>
     </string-array>
 
     <!-- Tipo de Relación -->
@@ -355,9 +357,17 @@
         <item>Fútbol</item>
         <item>Baloncesto</item>
         <item>Natación</item>
+        <item>Gimnasio</item>
+        <item>Yoga</item>
         <item>Ciclismo</item>
         <item>Tenis</item>
-        <item>Otros</item>
+        <item>Atletismo</item>
+        <item>Voleibol</item>
+        <item>Artes marciales</item>
+        <item>Senderismo</item>
+        <item>Esquí</item>
+        <item>Patinaje</item>
+        <item>Ninguno</item>
     </string-array>
 
     <!-- Hobbies -->
@@ -368,7 +378,13 @@
         <item>Cocina</item>
         <item>Jardinería</item>
         <item>Manualidades</item>
-        <item>Otros</item>
+        <item>Películas</item>
+        <item>Videojuegos</item>
+        <item>Arte</item>
+        <item>Fotografía</item>
+        <item>Naturaleza</item>
+        <item>Escritura</item>
+        <item>Ninguno</item>
     </string-array>
 
     <!-- Dieta -->
@@ -378,9 +394,8 @@
         <item>Vegana</item>
         <item>Sin gluten</item>
         <item>Keto</item>
-        <item>Paleo</item>
-        <item>Mediterránea</item>
-        <item>Otras</item>
+        <item>Omnívora</item>
+        <item>Ninguna</item>
     </string-array>
 
     <!-- Género Musical -->
@@ -394,33 +409,60 @@
         <item>Clásica</item>
         <item>Jazz</item>
         <item>Latina</item>
-        <item>Otros</item>
+        <item>Reggaetón</item>
+        <item>Salsa</item>
+        <item>Latina</item>
+        <item>Tango</item>
+        <item>Metal</item>
+        <item>Urbana</item>
     </string-array>
 
-    <!-- ... otros strings ... -->
-    <string name="login_title">Iniciar Sesión</string>
-    <string name="email_hint">Correo Electrónico</string>
+    <!-- Strings de la actividad de registro -->
+    <string name="registration_successful">Registro exitoso!</string>
+    <string name="error_saving_data">Error al guardar los datos: %1$s</string>
+    <string name="error_uploading_photos">Error al subir las fotos.</string>
+    <string name="registration_error">Error de registro: %1$s</string>
+    <string name="name_required">El nombre es requerido.</string>
+    <string name="lastname_required">El apellido es requerido.</string>
+    <string name="email_required">El correo electrónico es requerido.</string>
+    <string name="invalid_email">Correo electrónico inválido.</string>
+    <string name="password_required">La contraseña es requerida.</string>
+    <string name="password_min_length">La contraseña debe tener al menos 8 caracteres.</string>
+    <string name="password_digit_required">La contraseña debe contener al menos un dígito.</string>
+    <string name="password_uppercase_required">La contraseña debe contener al menos una mayúscula.</string>
+    <string name="name2_required">El nombre de la segunda persona es requerido.</string>
+    <string name="lastname2_required">El apellido de la segunda persona es requerido.</string>
+    <string name="photos_required">Debes seleccionar al menos una foto.</string>
+    <string name="email_hint">Correo electrónico</string>
     <string name="password_hint">Contraseña</string>
-    <string name="login_button">Iniciar Sesión</string>
-    <string name="google_signin_button">Iniciar Sesión con Google</string>
+    <string name="name_hint">Nombre</string>
+    <string name="lastname_hint">Apellido</string>
+    <string name="name2_hint">Nombre (Persona 2)</string>
+    <string name="lastname2_hint">Apellido (Persona 2)</string>
+    <string name="guardar_registro">Guardar Registro</string>
+
+    <!-- ... otros strings ... -->
+    <string name="login_title">Acceder a tu cuenta</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="google_signin_button">Iniciar sesión con Google</string>
     <string name="dont_have_account">¿No tienes una cuenta? Regístrate</string>
-    <!-- ... otras cadenas ... -->
     <string name="profile_image_description">Imagen de perfil del usuario</string>
     <string name="edit_profile">Editar Perfil</string>
     <string name="logout">Cerrar Sesión</string>
     <string name="welcome_text">¡Bienvenido!</string>
     <string name="section_individual">Datos Individuales</string>
-    <string name="name_hint">Nombre</string>
-    <string name="lastname_hint">Apellido</string>
     <string name="section_conjunto">Datos del Conjunto</string>
-    <string name="guardar_registro">Guardar Registro</string>
     <string name="action_settings">Settings</string>
-
-    <!-- ... más strings si los tienes ... -->
     <string name="match_info_format">%1$d, %2$s - Compatibilidad: %3$.2f%%</string>
     <string name="name_not_available">Nombre no disponible</string>
     <string name="city_not_available">Ciudad no disponible</string>
     <string name="match_name_placeholder">Nombre de la Pareja</string>
     <string name="match_info_placeholder">Información adicional (ej: edad, ubicación)</string>
-    <string name="match_list_description">Lista de posibles parejas</string>  <!-- Añadido -->
+    <string name="match_list_description">Lista de posibles parejas</string>
+    <!-- Strings para activity_register.xml -->
+    <string name="datos_persona_1">Datos de la Persona 1</string>
+    <string name="datos_persona_2">Datos de la Persona 2</string>
+    <string name="fotos_de_perfil">Fotos de Perfil</string>
+    <string name="photo">Foto</string>
+    <string name="delete_photo">Eliminar foto</string>
 </resources>

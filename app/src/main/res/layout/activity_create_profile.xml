@@ -16,57 +16,68 @@
             android:id="@+id/create_profile_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:gravity="center"
             android:text="@string/create_profile_title"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+            style="@style/TitleTextStyle" />
 
         <!-- Sección: Datos Individuales - Persona 1 -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/section_individual_1"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <!-- Nombres (Persona 1) -->
-        <com.google.android.material.textfield.TextInputLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/name_hint_1"
             android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nombres"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:hint="@string/name_hint_1">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nombres"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    style="@style/EditTextStyle"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
 
         <!-- Apellidos (Persona 1) -->
-        <com.google.android.material.textfield.TextInputLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/lastname_hint_1"
             android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/apellidoEditText"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:hint="@string/lastname_hint_1">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/apellidoEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    style="@style/EditTextStyle" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
 
         <!-- Nacionalidad (Persona 1) -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/nacionalidad_1"
             android:labelFor="@+id/nacionalidadSpinner"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <Spinner
             android:id="@+id/nacionalidadSpinner"
@@ -79,12 +90,55 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/raza_1"
             android:labelFor="@+id/razaSpinner1"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <Spinner
             android:id="@+id/razaSpinner1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Edad (Persona 1) - NUEVO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/edad_1"
+            android:textColor="@color/colorTextPrimary" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edad_hint_1">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edadEditText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    style="@style/EditTextStyle" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
+
+        <!-- Personalidad (Persona 1) - NUEVO -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/personalidad_1"
+            android:textColor="@color/colorTextPrimary" />
+
+        <Spinner
+            android:id="@+id/personalidadSpinner1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
@@ -94,47 +148,60 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/section_individual_2"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <!-- Nombres (Persona 2) -->
-        <com.google.android.material.textfield.TextInputLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/name_hint_2"
             android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nombresParejaEditText"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:hint="@string/name_hint_2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nombresParejaEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:minHeight="48dp"
+                    style="@style/EditTextStyle" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
 
         <!-- Apellidos (Persona 2) -->
-        <com.google.android.material.textfield.TextInputLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/lastname_hint_2"
             android:layout_marginBottom="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/apellidoParejaEditText"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:hint="@string/lastname_hint_2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/apellidoParejaEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    style="@style/EditTextStyle" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
 
         <!-- Nacionalidad (Persona 2) -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/nacionalidad_2"
             android:labelFor="@+id/nacionalidadParejaSpinner"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <Spinner
             android:id="@+id/nacionalidadParejaSpinner"
@@ -147,9 +214,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/raza_2"
             android:labelFor="@+id/razaSpinner2"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <Spinner
             android:id="@+id/razaSpinner2"
@@ -158,21 +226,65 @@
             android:minHeight="48dp"
             android:layout_marginBottom="16dp" />
 
+        <!-- Edad (Persona 2) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/edad_2"
+            android:textColor="@color/colorTextPrimary" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/edad_hint_2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edadEditText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    style="@style/EditTextStyle" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </FrameLayout>
+
+        <!-- Personalidad (Persona 2) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/personalidad_2"
+            android:textColor="@color/colorTextPrimary" />
+
+        <Spinner
+            android:id="@+id/personalidadSpinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:layout_marginBottom="16dp" />
+
+
         <!-- Sección: Foto de Perfil (Compartida - 1 a 4 fotos) -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/section_profile_photos"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="@string/profile_photos_description"
-            android:layout_marginBottom="16dp" />
+            android:textColor="@color/colorTextSecondary" />
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -186,6 +298,7 @@
                 android:layout_height="120dp"
                 android:layout_gravity="center"
                 android:contentDescription="@string/profile_photos_description"
+                android:background="@color/profile_placeholder_background"
                 android:src="@drawable/ic_profile" />
 
             <Button
@@ -193,26 +306,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center_horizontal"
-                android:text="@string/add_photo" />
+                android:text="@string/add_photo"
+                style="@style/ButtonStyle"/>
         </FrameLayout>
 
         <!-- Sección: Datos Adicionales (En Común) -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/section_adicional"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <!-- Tipo de Relación -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/tipo_relacion"
             android:labelFor="@+id/tipoRelacionSpinner"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <Spinner
             android:id="@+id/tipoRelacionSpinner"
@@ -225,9 +341,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/cantidad_hijos"
             android:labelFor="@+id/hijosSpinner"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <Spinner
             android:id="@+id/hijosSpinner"
@@ -240,13 +357,14 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/mascotas"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
-        <LinearLayout
+        <com.google.android.flexbox.FlexboxLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            app:flexWrap="wrap">
 
             <CheckBox
                 android:id="@+id/perrosCheckBox"
@@ -260,21 +378,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/gatos"
-                android:layout_marginEnd="16dp"/>
+                android:layout_marginEnd="16dp" />
 
             <CheckBox
                 android:id="@+id/conejosCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/conejos"
-                android:layout_marginEnd="16dp"/>
+                android:layout_marginEnd="16dp" />
 
             <CheckBox
                 android:id="@+id/hamstersCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hamsters"
-                android:layout_marginEnd="16dp"/>
+                android:layout_marginEnd="16dp" />
 
             <CheckBox
                 android:id="@+id/otrosCheckBox"
@@ -282,15 +400,16 @@
                 android:layout_height="wrap_content"
                 android:text="@string/otros_mascotas" />
 
-        </LinearLayout>
+        </com.google.android.flexbox.FlexboxLayout>
 
         <!-- Religión -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/religion"
             android:labelFor="@+id/religionRadioGroup"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <RadioGroup
             android:id="@+id/religionRadioGroup"
@@ -341,9 +460,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/ideologia_politica"
             android:labelFor="@+id/ideologiaPoliticaSpinner"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <Spinner
             android:id="@+id/ideologiaPoliticaSpinner"
@@ -356,9 +476,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/consumo_alcohol"
             android:labelFor="@+id/consumoAlcoholRadioGroup"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <RadioGroup
             android:id="@+id/consumoAlcoholRadioGroup"
@@ -391,9 +512,10 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/consumo_tabaco"
             android:labelFor="@+id/consumoTabacoRadioGroup"
-            android:layout_marginBottom="8dp" />
+            android:textColor="@color/colorTextPrimary" />
 
         <RadioGroup
             android:id="@+id/consumoTabacoRadioGroup"
@@ -426,141 +548,113 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/deportes"
-            android:layout_marginBottom="8dp" />
-        <LinearLayout
+            android:textColor="@color/colorTextPrimary" />
+
+        <com.google.android.flexbox.FlexboxLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            app:flexWrap="wrap">
+
             <CheckBox
                 android:id="@+id/futbolCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/futbol"
                 android:layout_marginEnd="16dp" />
+
             <CheckBox
                 android:id="@+id/baloncestoCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/baloncesto"
                 android:layout_marginEnd="16dp" />
+
             <CheckBox
                 android:id="@+id/natacionCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/natacion"
                 android:layout_marginEnd="16dp" />
+
             <CheckBox
                 android:id="@+id/ciclismoCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ciclismo"
                 android:layout_marginEnd="16dp" />
+
             <CheckBox
                 android:id="@+id/tenisCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tenis"
                 android:layout_marginEnd="16dp" />
+
             <CheckBox
                 android:id="@+id/otrosDeportesCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/otros_deportes"
                 android:layout_marginEnd="16dp" />
-        </LinearLayout>
+        </com.google.android.flexbox.FlexboxLayout>
+
         <!-- Hobbies -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
             android:text="@string/hobbies"
-            android:layout_marginBottom="8dp" />
-        <LinearLayout
+            android:textColor="@color/colorTextPrimary" />
+
+        <com.google.android.flexbox.FlexboxLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            app:flexWrap="wrap">
+
             <CheckBox
                 android:id="@+id/lecturaCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/lectura"
                 android:layout_marginEnd="16dp" />
+
             <CheckBox
                 android:id="@+id/viajesCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/viajes"
                 android:layout_marginEnd="16dp" />
+
             <CheckBox
                 android:id="@+id/cocinaCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cocina"
                 android:layout_marginEnd="16dp" />
+
             <CheckBox
                 android:id="@+id/jardineriaCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/jardineria"
                 android:layout_marginEnd="16dp" />
+
             <CheckBox
                 android:id="@+id/manualidadesCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/manualidades"
                 android:layout_marginEnd="16dp" />
+
             <CheckBox
                 android:id="@+id/otrosHobbiesCheckBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/otros_hobbies" />
-        </LinearLayout>
-        <!-- Dieta -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/dieta"
-            android:labelFor="@+id/dietaSpinner"
-            android:layout_marginBottom="8dp" />
-        <Spinner
-            android:id="@+id/dietaSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:layout_marginBottom="16dp" />
-        <!-- Género Musical -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/genero_musical"
-            android:labelFor="@+id/generoMusicalSpinner"
-            android:layout_marginBottom="8dp" />
-        <Spinner
-            android:id="@+id/generoMusicalSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:layout_marginBottom="16dp" />
-        <!-- Pais/Ciudad de residencia -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/pais_ciudad_residencia"
-            android:labelFor="@+id/paisCiudadResidenciaAutoCompleteTextView"
-            android:layout_marginBottom="8dp" />
-        <AutoCompleteTextView
-            android:id="@+id/paisCiudadResidenciaAutoCompleteTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:completionThreshold="1"
-            android:layout_marginBottom="16dp" />
-        <!-- Botón: Siguiente -->
-        <Button
-            android:id="@+id/nextButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="@string/next_button_label" />
+                android:text="@string/otros_hobbies"
+                android:layout_marginEnd="16dp" />
+        </com.google.android.flexbox.FlexboxLayout>
+
     </LinearLayout>
 </ScrollView>
