@@ -459,6 +459,11 @@
     <string name="match_name_placeholder">Nombre de la Pareja</string>
     <string name="match_info_placeholder">Información adicional (ej: edad, ubicación)</string>
     <string name="match_list_description">Lista de posibles parejas</string>
+    <string name="nombres_descripcion">Nombres</string>
+    <string name="apellidos_descripcion">Apellidos</string>
+    <string name="practica_deportes">¿Practican deportes?</string>
+
+
     <!-- Strings para activity_register.xml -->
     <string name="datos_persona_1">Datos de la Persona 1</string>
     <string name="datos_persona_2">Datos de la Persona 2</string>
