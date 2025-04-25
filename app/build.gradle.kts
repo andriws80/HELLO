@@ -50,13 +50,22 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.kotlinx.coroutines.android) // o una versión compatible
 
     // Firebase - Dependencias actualizadas (se mantienen las versiones estables actuales)
-    implementation(platform(libs.firebase.bom)) // Corregido: Uso de platform() para el BoM
+    implementation(platform(libs.firebase.bom)) 
     implementation(libs.google.firebase.auth.ktx)
     implementation(libs.google.firebase.firestore.ktx)
     implementation(libs.google.firebase.storage.ktx)
     implementation(libs.google.firebase.messaging.ktx)
+
+
+
+    implementation(libs.firebase.auth)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.googleid)
+
 
     // Navigation - Dependencias actualizadas (se mantienen las versiones estables actuales)
     implementation(libs.androidx.navigation.fragment.ktx)
@@ -76,6 +85,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
 
     // RecyclerView and CardView (se mantienen las versiones estables actuales)
     implementation(libs.androidx.recyclerview)
