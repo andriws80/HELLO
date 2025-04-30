@@ -5,11 +5,23 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/formulario_registro"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
+            android:gravity="center_horizontal"/>
 
         <!-- Registration Fields -->
         <EditText
@@ -23,10 +35,10 @@
             android:layout_marginTop="4dp"
             android:layout_marginBottom="4dp"
             android:textColor="@color/colorTextPrimary"
-        android:textColorHint="@color/button_gray"
-        android:backgroundTint="@color/dark_gray"
-        android:autofillHints="emailAddress"
-        android:layout_gravity="center_horizontal" />
+            android:textColorHint="@color/button_gray"
+            android:backgroundTint="@color/dark_gray"
+            android:autofillHints="emailAddress"
+            android:layout_gravity="center_horizontal" />
 
         <EditText
             android:id="@+id/passwordField"
@@ -52,7 +64,7 @@
             android:text="@string/datos_persona_1"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/colorTextPrimary" />  <!-- Asegura que el texto también tenga buen contraste -->
+            android:textColor="@color/colorTextPrimary" />
 
         <EditText
             android:id="@+id/nameField"
@@ -86,6 +98,16 @@
             android:autofillHints="familyName"
             android:layout_gravity="center_horizontal" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/nacionalidad_persona_1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_gravity="center_horizontal"/>
+
         <Spinner
             android:id="@+id/nacionalidadSpinner"
             android:layout_width="300dp"
@@ -93,6 +115,17 @@
             android:minHeight="48dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
+            android:layout_gravity="center_horizontal"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/raza_persona_1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
             android:layout_gravity="center_horizontal"/>
 
         <Spinner
@@ -104,6 +137,16 @@
             android:paddingBottom="8dp"
             android:layout_gravity="center_horizontal"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/edad_persona_1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_gravity="center_horizontal"/>
+
         <Spinner
             android:id="@+id/edadSpinner"
             android:layout_width="300dp"
@@ -113,14 +156,195 @@
             android:paddingBottom="8dp"
             android:layout_gravity="center_horizontal"/>
 
-        <Spinner
-            android:id="@+id/personalidadSpinner"
-            android:layout_width="300dp"
+        <!-- Nivel Académico para Persona 1 -->
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/nivel_academico_persona_1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
             android:layout_gravity="center_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+
+            <CheckBox
+                android:id="@+id/primariaCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/primaria" />
+
+            <CheckBox
+                android:id="@+id/secundariaCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/secundaria" />
+
+            <CheckBox
+                android:id="@+id/tecnicoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/tecnico" />
+
+            <CheckBox
+                android:id="@+id/tecnologoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/tecnologo" />
+
+            <CheckBox
+                android:id="@+id/universitarioCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/universitario" />
+
+            <CheckBox
+                android:id="@+id/posgradoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/posgrado" />
+
+            <CheckBox
+                android:id="@+id/doctoradoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/doctorado" />
+
+            <CheckBox
+                android:id="@+id/posdoctoradoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:text="@string/posdoctorado" />
+
+        </LinearLayout>
+
+        <!-- Personalidad para Persona 1 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/personalidad_persona_1"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_gravity="center_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+
+            <CheckBox
+                android:id="@+id/extrovertidoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/extrovertido" />
+
+            <CheckBox
+                android:id="@+id/introvertidoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/introvertido" />
+
+            <CheckBox
+                android:id="@+id/aventureroCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aventurero" />
+
+            <CheckBox
+                android:id="@+id/creativoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/creativo" />
+
+            <CheckBox
+                android:id="@+id/analiticoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/analitico" />
+
+            <CheckBox
+                android:id="@+id/emocionalCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emocional" />
+
+            <CheckBox
+                android:id="@+id/racionalCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/racional" />
+
+            <CheckBox
+                android:id="@+id/perfeccionistaCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/perfeccionista" />
+
+            <CheckBox
+                android:id="@+id/sonadorCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sonador" />
+
+            <CheckBox
+                android:id="@+id/pragmaticoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pragmatico" />
+
+            <CheckBox
+                android:id="@+id/carismaticoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/carismatico" />
+
+            <CheckBox
+                android:id="@+id/reflexivoCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reflexivo" />
+
+        </LinearLayout>
 
         <!-- Person 2 Fields -->
         <TextView
@@ -164,6 +388,16 @@
             android:autofillHints="familyName"
             android:layout_gravity="center_horizontal" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/nacionalidad_persona_2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_gravity="center_horizontal"/>
+
         <Spinner
             android:id="@+id/nacionalidad2Spinner"
             android:layout_width="300dp"
@@ -171,6 +405,16 @@
             android:minHeight="48dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/raza_persona_2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
             android:layout_gravity="center_horizontal"/>
 
         <Spinner
@@ -182,6 +426,16 @@
             android:paddingBottom="8dp"
             android:layout_gravity="center_horizontal"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/edad_persona_2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_gravity="center_horizontal"/>
+
         <Spinner
             android:id="@+id/edad2Spinner"
             android:layout_width="300dp"
@@ -191,16 +445,165 @@
             android:paddingBottom="8dp"
             android:layout_gravity="center_horizontal"/>
 
-        <Spinner
-            android:id="@+id/personalidad2Spinner"
-            android:layout_width="300dp"
+        <!-- Personalidad para Persona 2 -->
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/personalidad_persona_2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
             android:layout_gravity="center_horizontal"/>
 
-        <!-- Photo Selection -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+
+            <CheckBox
+                android:id="@+id/extrovertido2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/extrovertido" />
+
+            <CheckBox
+                android:id="@+id/introvertido2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/introvertido" />
+
+            <CheckBox
+                android:id="@+id/aventurero2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aventurero" />
+
+            <CheckBox
+                android:id="@+id/creativo2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/creativo" />
+
+            <CheckBox
+                android:id="@+id/analitico2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/analitico" />
+
+            <CheckBox
+                android:id="@+id/emocional2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emocional" />
+
+            <CheckBox
+                android:id="@+id/racional2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/racional" />
+
+            <CheckBox
+                android:id="@+id/perfeccionista2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/perfeccionista" />
+
+            <CheckBox
+                android:id="@+id/sonador2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sonador" />
+
+            <CheckBox
+                android:id="@+id/pragmatico2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pragmatico" />
+
+            <CheckBox
+                android:id="@+id/carismatico2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/carismatico" />
+
+            <CheckBox
+                android:id="@+id/reflexivo2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reflexivo" />
+
+        </LinearLayout>
+
+        <!--NIVEL ACADEMICO-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/nivel_academico_persona_2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_gravity="center_horizontal"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal">
+
+            <CheckBox
+                android:id="@+id/primaria2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/primaria" />
+
+            <CheckBox
+                android:id="@+id/secundaria2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/secundaria" />
+
+            <CheckBox
+                android:id="@+id/tecnico2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tecnico" />
+
+            <CheckBox
+                android:id="@+id/tecnologo2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tecnologo" />
+
+            <CheckBox
+                android:id="@+id/universitario2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/universitario" />
+
+            <CheckBox
+                android:id="@+id/posgrado2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/posgrado" />
+
+            <CheckBox
+                android:id="@+id/doctorado2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/doctorado" />
+
+            <CheckBox
+                android:id="@+id/posdoctorado2CheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/posdoctorado" />
+
+        </LinearLayout>
+
+        <!-- Photos -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -208,42 +611,41 @@
             android:text="@string/fotos_de_perfil"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/colorTextPrimary" />
+            android:textColor="@color/colorTextPrimary"
+            android:layout_gravity="center_horizontal"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/photoRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="100dp"
             android:layout_marginTop="8dp" />
 
         <Button
             android:id="@+id/addPhotoButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:text="@string/add_photo"
-            android:minHeight="40dp"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="@color/accessible_blue"
-            android:textColor="@color/white"/>
+            android:layout_marginTop="8dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorPrimary" />
+
+        <!-- Register Button -->
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guardar_registro"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_gravity="center_horizontal"/>
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="gone" />
-
-        <Button
-            android:id="@+id/registerButton"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="@string/guardar_registro"
-            android:minHeight="40dp"
-            android:layout_gravity="center_horizontal"
-            android:backgroundTint="@color/accessible_blue"
-            android:textColor="@color/white"/>
+            android:visibility="gone"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 </ScrollView>

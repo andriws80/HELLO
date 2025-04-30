@@ -1,15 +1,23 @@
 [versions]
 activityKtx = "1.10.1"
 agp = "8.8.2"
+androidxCoreKtx = "1.16.0"
 appcompat = "1.7.0"
 cardview = "1.0.0"
 circleimageview = "3.1.0"
 constraintlayout = "2.2.1"
 coreKtx = "1.15.0"
 coreKtxVersion = "1.13.1"
+credentials = "1.5.0"
+credentialsPlayServicesAuth = "1.3.0-alpha03"
+credentialsVersion = "1.3.0-alpha03"
 firebaseBomVersion = "33.1.0"
 flexbox = "3.0.0"
+generativeai = "0.9.0"
 glide = "4.16.0"
+googleFirebaseBom = "33.12.0"
+googleid = "1.1.1"
+kotlinxCoroutinesAndroid = "1.8.1"
 material = "1.12.0"
 navigationKtx = "2.8.9"
 playServicesAuth = "21.3.0"
@@ -41,16 +49,26 @@ androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayo
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
 
 androidx-core-ktx-v1131 = { module = "androidx.core:core-ktx", version.ref = "coreKtxVersion" }
+androidx-core-ktx-v1160 = { module = "androidx.core:core-ktx", version.ref = "androidxCoreKtx" }
+androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
+androidx-credentials-play-services-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentials" }
+androidx-credentials-play-services-auth-v130alpha03 = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentialsPlayServicesAuth" }
+androidx-credentials-v130alpha03 = { module = "androidx.credentials:credentials", version.ref = "credentialsVersion" }
 androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
+firebase-auth = { module = "com.google.firebase:firebase-auth" }
 firebase-bom-v3310 = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBomVersion" }
+firebase-bom-v33120 = { module = "com.google.firebase:firebase-bom", version.ref = "googleFirebaseBom" }
 flexbox = { module = "com.google.android.flexbox:flexbox", version.ref = "flexbox" }
+generativeai = { module = "com.google.ai.client.generativeai:generativeai", version.ref = "generativeai" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 google-firebase-auth-ktx = { module = "com.google.firebase:firebase-auth-ktx" }
 google-firebase-firestore-ktx = { module = "com.google.firebase:firebase-firestore-ktx" }
 google-firebase-messaging-ktx = { module = "com.google.firebase:firebase-messaging-ktx" }
 google-firebase-storage-ktx = { module = "com.google.firebase:firebase-storage-ktx" }
+googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 ksp = { module = "com.github.bumptech.glide:ksp", version.ref = "glide" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 androidx-navigation-fragment-ktx = { module = "androidx.navigation:navigation-fragment-ktx", version.ref = "navigationKtx" }

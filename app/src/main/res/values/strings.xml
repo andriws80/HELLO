@@ -1,4 +1,117 @@
 <resources>
+
+    <!--strings de activity_login.xml-->
+
+    <string name="login_title">Acceder a tu cuenta</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">Iniciar sesión</string>
+    <string name="google_signin_button">Iniciar sesión con Google</string>
+    <string name="dont_have_account">¿No tienes una cuenta? Regístrate</string>
+    <string name="default_web_client_id">290963246421-t2kb2dmbk0ahvvqu3lcupjd4gbq4o4vt.apps.googleusercontent.com</string>
+    <!--fin strings de activity_login.xml-->
+
+    <!-- strings de activity_register.xml-->
+
+
+    <string name="formulario_registro">FORMULARIO DE REGISTRO</string>
+    <string name="datos_persona_1">Datos de la Persona 1</string>
+    <string name="datos_persona_2">Datos de la Persona 2</string>
+    <string name="fill_all_fields">Por favor, complete todos los campos.</string>
+    <string name="select_valid_options">Por favor, seleccione una opción válida para cada campo.</string>
+    <string name="select_option">Seleccionar</string>
+    <string name="select_academic_level">Por favor, seleccione al menos un nivel académico para %1$s.</string>
+    <string name="select_personality">Por favor, seleccione al menos una característica de personalidad para %1$s.</string>
+    <string name="upload_at_least_one_photo">Por favor, suba al menos una foto.</string>
+    <string name="password_too_short">La contraseña debe tener al menos 6 caracteres.</string>
+    <string name="nivel_academico_persona_1">Nivel Académico </string>
+    <string name="nivel_academico_persona_2">Nivel Académico de la Persona 2</string>
+    <string name="personalidad_persona_1">Personalidad </string>
+    <string name="personalidad_persona_2">Personalidad</string>
+    <string name="nacionalidad_persona_1">Seleccione su nacionalidad</string>
+    <string name="nacionalidad_persona_2">Seleccione su nacionalidad</string>
+    <string name="raza_persona_2">Seleccione su raza</string>
+    <string name="raza_persona_1">Seleccione su raza</string>
+    <string name="edad_persona_2">Seleccione su edad</string>
+    <string name="edad_persona_1">Seleccione su edad</string>
+    <string name="primaria">Primaria</string>
+    <string name="secundaria">Secundaria</string>
+    <string name="tecnico">Técnico</string>
+    <string name="tecnologo">Tecnólogo</string>
+    <string name="universitario">Universitario</string>
+    <string name="posgrado">Posgrado</string>
+    <string name="doctorado">Doctorado</string>
+    <string name="posdoctorado">Posdoctorado</string>
+    <string name="extrovertido">Extrovertido</string>
+    <string name="introvertido">Introvertido</string>
+    <string name="aventurero">Aventurero</string>
+    <string name="creativo">Creativo</string>
+    <string name="analitico">Analítico</string>
+    <string name="emocional">Emocional</string>
+    <string name="racional">Racional</string>
+    <string name="perfeccionista">Perfeccionista</string>
+    <string name="sonador">Soñador</string>
+    <string name="pragmatico">Pragmático</string>
+    <string name="carismatico">Carismático</string>
+    <string name="reflexivo">Reflexivo</string>
+    <string name="practica_deportes_si">Sí</string>
+    <string name="practica_deportes_no">No</string>
+    <string name="practica_deportes_a_veces">A veces</string>
+    <string name="tipo_deportes">Tipo de Deportes</string>
+    <string name="tipo_deportes_hint">Seleccione los deportes que practica</string>
+    <string name="frecuencia_deportes">Frecuencia de Práctica Deportiva</string>
+    <string name="intereses">Intereses</string>
+    <string name="viajar">Viajar</string>
+    <string name="cocinar">Cocinar</string>
+    <string name="juegos_de_mesa">Juegos de Mesa</string>
+    <string name="videojuegos">Videojuegos</string>
+    <string name="leer">Leer</string>
+    <string name="escuchar_musica">Escuchar Música</string>
+    <string name="tocar_instrumentos">Tocar Instrumentos</string>
+    <string name="fotografia">Fotografía</string>
+    <string name="canto">Canto</string>
+    <string name="baile">Baile</string>
+    <string name="teatro">Teatro</string>
+    <string name="cine">Cine</string>
+    <string name="series">Series</string>
+    <string name="select_valid_option">Por favor, seleccione una opción válida de los menús desplegables.</string>  <!--  Este puede ser el mensaje genérico si quieres  -->
+    <string name="select_valid_option_nacionalidad">Por favor, seleccione una nacionalidad válida para la primera persona.</string>
+    <string name="select_valid_option_raza">Por favor, seleccione una raza válida para la primera persona.</string>
+    <string name="select_valid_option_edad">Por favor, seleccione una edad válida para la primera persona.</string>
+    <string name="select_valid_option_nacionalidad2">Por favor, seleccione una nacionalidad válida para la segunda persona.</string>
+    <string name="select_valid_option_raza2">Por favor, seleccione una raza válida para la segunda persona.</string>
+    <string name="select_valid_option_edad2">Por favor, seleccione una edad válida para la segunda persona.</string>
+    <!-- fin strings de activity_register.xml-->
+
+
+
+    <!--  strings de activity_create_profile.xml-->
+
+    <string name="museos">Museos</string>
+    <string name="conciertos">Conciertos</string>
+    <string name="festivales">Festivales</string>
+    <string name="voluntariado">Voluntariado</string>
+    <string name="aprender_idiomas">Aprender Idiomas</string>
+    <string name="realizar_cursos">Realizar Cursos</string>
+    <string name="cuidado_del_medio_ambiente">Cuidado del Medio Ambiente</string>
+    <string name="creencias">Creencias</string>
+    <string name="personalidad_compatibilidad">Preferencia de Compatibilidad de Personalidad</string>
+    <string name="personalidad_compatibilidad_igual">Igual</string>
+    <string name="personalidad_compatibilidad_similar">Similar</string>
+    <string name="personalidad_compatibilidad_opuesta">Opuesta</string>
+    <string name="personalidad_compatibilidad_indiferente">Indiferente</string>
+    <string name="buscar_pareja_estable">¿Busca una Relación Estable?</string>
+    <string name="buscar_pareja_estable_si">Sí</string>
+    <string name="buscar_pareja_estable_no">No</string>
+    <string name="buscar_pareja_estable_indiferente">Indiferente</string>
+    <string name="tipo_de_relacion_buscada">Tipo de Relación Buscada</string>
+    <string name="duracion_relacion_deseada">Duración de Relación Deseada</string>
+    <string name="planes_primeras_citas">Planes para las Primeras Citas</string>
+    <string name="planes_primeras_citas_hint">Escribe algunas ideas para las primeras citas</string>
+    <string name="frecuencia_citas">Frecuencia de Citas Deseada</string>
+
+    <!--  fin strings de activity_create_profile.xml-->
+
     <string name="app_name">Hello</string>
     <string name="default_notification_channel_id">GENERAL</string>
 
@@ -18,28 +131,7 @@
     <!-- *****************************  FORMULARIO INDIVIDUAL  ******************************* -->
     <!-- ************************************************************************************** -->
 
-    <!-- Sección: Datos Individuales (Persona 1) -->
-    <string name="create_profile_title">Crea tu Perfil</string>
-    <string name="section_individual_1">Datos Individuales – Persona 1</string>
-    <string name="name_hint_1">Nombres (Persona 1)</string>
-    <string name="lastname_hint_1">Apellidos (Persona 1)</string>
-    <string name="edad_1">Edad (Persona 1)</string>
-    <string name="edad_hint_1">Introduce la edad de la Persona 1</string>  <!-- O un texto más específico -->
-    <string name="nacionalidad_1">Nacionalidad (Persona 1)</string>
-    <string name="raza_1">Raza (Persona 1)</string>
-    <string name="personalidad_1">Personalidad (Persona 1)</string>
-    <string name="nivel_academico_1">Nivel Académico (Persona 1)</string>
 
-    <!-- Sección: Datos Individuales (Persona 2) -->
-    <string name="section_individual_2">Datos Individuales – Persona 2</string>
-    <string name="name_hint_2">Nombres (Persona 2)</string>
-    <string name="lastname_hint_2">Apellidos (Persona 2)</string>
-    <string name="edad_2">Edad (Persona 2)</string>
-    <string name="edad_hint_2">Introduce la edad de la Persona 2</string>  <!-- Similar para la Persona 2 -->
-    <string name="nacionalidad_2">Nacionalidad (Persona 2)</string>
-    <string name="raza_2">Raza (Persona 2)</string>
-    <string name="personalidad_2">Personalidad (Persona 2)</string>
-    <string name="nivel_academico_2">Nivel Académico (Persona 2)</string>
 
     <!-- ************************************************************************************** -->
     <!-- *****************************  FORMULARIO EN PAREJA  ********************************* -->
@@ -433,19 +525,19 @@
     <string name="name2_required">El nombre de la segunda persona es requerido.</string>
     <string name="lastname2_required">El apellido de la segunda persona es requerido.</string>
     <string name="photos_required">Debes seleccionar al menos una foto.</string>
-    <string name="email_hint">Correo electrónico</string>
-    <string name="password_hint">Contraseña</string>
+
+
     <string name="name_hint">Nombre</string>
     <string name="lastname_hint">Apellido</string>
-    <string name="name2_hint">Nombre (Persona 2)</string>
-    <string name="lastname2_hint">Apellido (Persona 2)</string>
+    <string name="name2_hint">Nombre</string>
+    <string name="lastname2_hint">Apellido</string>
     <string name="guardar_registro">Guardar Registro</string>
 
     <!-- ... otros strings ... -->
-    <string name="login_title">Acceder a tu cuenta</string>
-    <string name="login_button">Iniciar sesión</string>
-    <string name="google_signin_button">Iniciar sesión con Google</string>
-    <string name="dont_have_account">¿No tienes una cuenta? Regístrate</string>
+
+
+
+
     <string name="profile_image_description">Imagen de perfil del usuario</string>
     <string name="edit_profile">Editar Perfil</string>
     <string name="logout">Cerrar Sesión</string>
@@ -465,8 +557,7 @@
 
 
     <!-- Strings para activity_register.xml -->
-    <string name="datos_persona_1">Datos de la Persona 1</string>
-    <string name="datos_persona_2">Datos de la Persona 2</string>
+
     <string name="fotos_de_perfil">Fotos de Perfil</string>
     <string name="photo">Foto</string>
     <string name="delete_photo">Eliminar foto</string>
